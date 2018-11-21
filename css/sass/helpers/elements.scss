@@ -1,0 +1,52 @@
+h1{
+    font-size: 40px;
+    color: #ffff;
+}
+
+h2{ 
+    font-size: 60px;
+    padding: 19px 0;
+    margin: 0 0 0 290px;
+    color: #ffff;
+}
+
+h3{
+    font-size: 50px;
+    color:#ffff;
+    margin: 0 0 0 105px;
+    padding: 50px 0 50px;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+p{
+    color: #ffffff;
+}
+
+@media(max-width:1025px){
+    header{
+        flex-direction: column;
+    }
+
+    h1{
+        margin: 0 auto;
+    }
+
+    h2{
+        margin: 0 auto;
+    }
+}
+
+@media (max-width:700px){
+    h3{
+        margin: 0 auto;
+    }
+}

@@ -1,0 +1,321 @@
+/*------------------------header----------------------*/
+
+.title-block{
+    background: $pinkCranberry;
+    padding: 30px;
+    z-index: 2;
+
+    &::before{
+        @include tritopLeft(438px, 165px solid $pinkCranberry, 0, 427px, 0); 
+    }
+
+    &::after{
+        @include tritopLeft(438px, 165px solid $pinkCranberry, 161px, 0, 0);
+    }
+}
+
+@media (max-width:1215px){
+    .title-block{
+        padding:5px;
+
+        &::before{
+            @include tritopLeft(377px, 148px solid $pinkCranberry, 0, 377px, 0); 
+        }
+    
+        &::after{
+            @include tritopLeft(377px, 148px solid $pinkCranberry, 148px, 0, 0);
+        }
+    }
+}
+
+@media (max-width:1025px){
+    .title-block{
+        width: auto;
+        display: flex;
+
+        &::before{
+            display: none;
+        }
+    
+        &::after{
+            display: none;
+        }
+    }
+
+    .navbar, .hidden-navbar{
+        width: 80%;
+
+        &::before{
+            @include tritopLeft(41px, 41px solid $darkCranberry, 0, inherit, -41px)
+            
+        }
+    }
+}
+
+.nav-title{
+    background: $mediumCranberry;
+}
+
+%navbar-styles{
+    background: $darkCranberry;
+
+    &::after{
+        @include tritopRight(41px solid $darkCranberry , 41px, 0, -41px);
+    }
+}
+
+.navbar{
+    @extend %navbar-styles;
+}
+
+
+.hidden-navbar{
+    @extend %navbar-styles;
+    z-index: 3;
+    opacity: 0.8;
+    display: none;
+    top: 0;
+}
+
+.navbar > ul, .hidden-navbar > ul{
+    margin: 12px 0;
+
+    a{
+        font-size: 15px;
+    }
+}
+
+/*------------------------header----------------------*/
+
+/*-------------------------body-----------------------*/
+
+.reel-right{
+    padding: 100px 200px 50px 0;
+    
+    p{
+        margin: 0;
+        padding: 0 0 100px 105px;
+    }
+}
+
+@media (max-width:1025px){
+    .reel-left{
+        display: none;
+    }
+
+    .reel-right{
+        width: 100%;
+        padding: 0;
+        justify-content: center;
+    }
+}
+
+.video-block{
+    z-index: 1;
+    margin: 0 125px;
+
+    video{
+        @include gearCircle(450px, 450px, 225px);
+        margin: 25px;
+    }
+}
+
+.gear-main{
+    @include gearCircle(500px, 500px, 250px);
+    background: black;
+}
+
+.video-block:hover ~ .gear-main{
+    animation-name: gear;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+    animation-duration: 8s;
+}
+
+@keyframes gear {
+    0% {
+      transform: rotateZ(0deg); 
+    }
+  
+    100% {
+      transform: rotateZ(360deg); 
+    } 
+}
+
+.gear-drive{
+    @include gearCircle(125px, 125px, 62.5px);
+    background: black;
+    margin: 315px 0;
+    z-index: 2;
+}
+
+@media (max-width:700px){
+    .gear-drive{
+        display: none;
+    }
+
+    .video-block{
+        margin: 0 auto;
+    }
+
+    .reel-right > p{
+        margin: 0 auto;
+        padding: 0 0 100px 0;
+    }
+}
+
+.video-block:hover ~ .gear-drive{
+    animation-name: gear-d;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+    animation-duration: 2s;
+}
+
+@keyframes gear-d {
+    0% {
+      transform: rotateZ(0deg); 
+    }
+  
+    100% {
+      transform: rotateZ(-360deg); 
+    } 
+}
+
+.tooth {
+    @include gearCircle(20px, 20px, 0);
+    background: black;
+
+    &::before{
+        @include tribottomRight(10px, 20px, 20px);
+    }
+
+    &::after{
+        @include tribottomLeft(10px, 20px, 20px);
+    }
+}
+
+/*-----------------Gear Teeth--------------------*/
+.t1{
+    @include gearTeeth(-20px, 240px, 0deg);
+}
+.t2{
+    @include gearTeeth(-14px, 290px, 11deg);
+}
+.t3{
+    @include gearTeeth(0, 338px, 22deg);
+}
+.t4{
+    @include gearTeeth(23px, 382px, 33deg);
+}
+.t5{
+    @include gearTeeth(54px, 421px, 44deg);
+}
+.t6{
+    @include gearTeeth(92px, 452px, 55deg);
+}
+.t7{
+    @include gearTeeth(138px, 478px, 67deg);
+}
+.t8{
+    @include gearTeeth(188px, 494px, 79deg);
+}
+.t9{
+    @include gearTeeth(240px, 499px, 90deg);
+}
+.t10{
+    @include gearTeeth(290px, 494px, 101deg);
+}
+.t11{
+    @include gearTeeth(338px, 480px, 112deg);
+}
+.t12{
+    @include gearTeeth(381px, 458px, 123deg);
+}
+.t13{
+    @include gearTeeth(422px, 425px, 134deg);
+}
+.t14{
+    @include gearTeeth(454px, 387px, 145deg);
+}
+.t15{
+    @include gearTeeth(479px, 342px, 157deg);
+}
+.t16{
+    @include gearTeeth(494px, 292px, 169deg);
+}
+.t17{
+    @include gearTeeth(499px, 240px, 180deg);
+}
+.t18{
+    @include gearTeeth(494px, 188px, 191deg);
+}
+.t19{
+    @include gearTeeth(478px, 138px, 203deg);
+}
+.t20{
+    @include gearTeeth(453px, 92px, 215deg);
+}
+.t21{
+    @include gearTeeth(420px, 53px, 226deg);
+}
+.t22{
+    @include gearTeeth(381px, 23px, 236deg);
+}
+.t23{
+    @include gearTeeth(337px, 0px, 247deg);
+}
+.t24{
+    @include gearTeeth(290px, -14px, 258deg);
+}
+.t25{
+    @include gearTeeth(240px, -19px, 270deg);
+}
+.t26{
+    @include gearTeeth(189px, -14px, 282deg);
+}
+.t27{
+    @include gearTeeth(142px, 0px, 292deg);
+}
+.t28{
+    @include gearTeeth(98px, 23px, 302deg);
+}
+.t29{
+    @include gearTeeth(59px, 54px, 314deg);
+}
+.t30{
+    @include gearTeeth(25px, 95px, 326deg);
+}
+.t31{
+    @include gearTeeth(1px, 139px, 337deg);
+}
+.t32{
+    @include gearTeeth(-14px, 188px, 348deg);
+}
+
+.d1{
+    @include gearTeeth(-17px, 52.5px, 0deg);
+}
+.d2{
+    @include gearTeeth(4px, 102px, 45deg);
+}
+.d3{
+    @include gearTeeth(52.5px, 122px, 90deg);
+}
+.d4{
+    @include gearTeeth(100px, 103px, 135deg);
+}
+.d5{
+    @include gearTeeth(122px, 52.5px, 180deg);
+}
+.d6{
+    @include gearTeeth(102px, 4px, 225deg);
+}
+.d7{
+    @include gearTeeth(52.5px, -17px, 270deg);
+}
+.d8{
+    @include gearTeeth(4px, 3px, 315deg);
+}
+/*-----------------Gear Teeth--------------------*/
+
+/*-------------------------body-----------------------*/

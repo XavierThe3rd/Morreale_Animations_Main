@@ -1,0 +1,65 @@
+/*rename and include animations placeholder. put in seperate file*/
+
+@mixin tritopLeft($right, $top, $p-top, $p-left, $p-right){
+    content: "";
+    width: 0;
+    height: 0;
+    border: 0 solid transparent;
+    border-left-width: 0px;
+    border-right-width: $right;
+    top: $p-top;
+    left: $p-left;
+    right: $p-right;
+    border-top: $top;
+    position: absolute;
+}
+
+@mixin tritopRight ($right, $bottom, $p-top, $p-left){
+    content: "";
+    width: 0;
+    height: 0;
+    border: 0 solid transparent;
+    border-top-width: 0px;
+    border-bottom-width: $bottom;
+    border-right: $right;
+    position: absolute;
+    top: $p-top;
+    left: $p-left;
+}
+
+@mixin tribottomRight ($left, $top, $p-left){
+    content: "";
+    width: 0;
+    height: 0;
+    border: 0 solid transparent;
+    border-bottom-width: 0px;
+    border-top-width: $top;
+    border-left: $left solid black;
+    position: absolute;
+    left: $p-left;
+}
+
+@mixin tribottomLeft($right, $top, $p-right){
+    content: "";
+    width: 0;
+    height: 0;
+    border: 0 solid transparent;
+    border-top-width: $top;
+    border-bottom-width: 0px;
+    border-right: $right solid black;
+    position: absolute;
+    right: $p-right;
+}
+
+
+@mixin gearTeeth($top, $left, $trans){
+    top: $top;
+    left: $left;
+    transform: rotate($trans);
+}
+
+@mixin gearCircle($width, $height, $radius){
+    width: $width;
+    height: $height;
+    border-radius: $radius;
+}
