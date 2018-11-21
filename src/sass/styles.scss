@@ -3,7 +3,7 @@
 @import "helpers/tools";
 @import "helpers/generics";
 @import "helpers/elements";
-@import "components/objects";
+@import "components/objects"; 
 @import "components/tester";
 
 html, body{
@@ -11,7 +11,5 @@ html, body{
 }
 
 body{
-    margin: 0;
-    padding: 0;
     background: $navyBlue;
 }
