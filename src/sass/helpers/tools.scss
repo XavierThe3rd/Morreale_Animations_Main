@@ -51,15 +51,37 @@
     right: $p-right;
 }
 
-
-@mixin gearTeeth($top, $left, $trans){
-    top: $top;
-    left: $left;
-    transform: rotate($trans);
-}
-
 @mixin gearCircle($width, $height, $radius){
     width: $width;
     height: $height;
     border-radius: $radius;
+}
+
+@mixin teeth($height){
+    width: 20px;
+    height: $height;
+}
+
+@mixin triteethRight($equal, $right, $p-left){
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 0 solid transparent;
+    border-top-width: $equal;
+    border-bottom-width: $equal;
+    border-right: $right solid black;
+    left: $p-left;
+}
+
+@mixin triteethLeft($equal, $left){
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 0 solid transparent;
+    border-bottom-width: $equal;
+    border-top-width: $equal;
+    border-left: $left solid black;
+    left:20px;
 }

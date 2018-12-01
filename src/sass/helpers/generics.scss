@@ -33,10 +33,10 @@
 
 @media (max-width:1445px){
     .grid7{
-        width: 60%;
+        width: 61%;
     }
 }
-@media (max-width:1025px){
+@media (max-width:1115px){
     .grid7{
         width: 100%;
     }
@@ -74,7 +74,7 @@
     align-items: center;
 }
 
- @media (max-width: 1025px){
+ @media (max-width: 1115px){
      .end{
          justify-content: center;
      }
@@ -94,4 +94,28 @@
 
 .abs{
     position: absolute;
+}
+
+/*----------------position----------------*/
+
+/*----------------z-index-----------------*/
+
+.z1{
+    z-index: 1;
+}
+
+.z2 {
+    z-index: 2;
+}
+
+.z3{
+    z-index: 3;
+}
+
+/*----------------z-index-----------------*/
+
+/*-----------------colors-----------------*/
+
+.blk{
+    background: black;
 }

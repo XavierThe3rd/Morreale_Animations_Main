@@ -1,10 +1,11 @@
 @import "helpers/reset"; /*shim, shiv, polyfill: a tool or way to make my code cross browsers compatible*/
 @import "helpers/settings";
 @import "helpers/tools";
+@import "helpers/animations";
 @import "helpers/generics";
 @import "helpers/elements";
-@import "components/objects"; 
-@import "components/tester";
+@import "components/header"; 
+@import "components/body";
 
 html, body{
     height: 101%;
@@ -12,4 +13,5 @@ html, body{
 
 body{
     background: $navyBlue;
+    overflow-x: hidden;
 }

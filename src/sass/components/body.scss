@@ -1,0 +1,86 @@
+.reel-right{
+    padding: 100px 200px 50px 0;
+    
+    p{
+        margin: 0 auto;
+        padding: 0 0 100px 0;
+    }
+
+    @media (max-width:1115px){
+        width: 100%;
+        padding: 0;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width:1115px){
+    .reel-left{
+        display: none;
+    }
+}
+
+.video-block{
+    margin: 0 125px;
+
+    @media (max-width:700px){
+        margin: 0 auto;
+    }
+}
+
+video{
+    @include gearCircle(450px, 450px, 225px);
+    margin: 25px;
+}
+
+.gear-follow{
+    @include gearCircle(500px, 500px, 250px);
+    background: black;
+}
+
+.gear-drive{
+    @include gearCircle(125px, 125px, 62.5px);
+    background: black;
+    top: 399px;
+    left: 56px;
+    transform: rotate(5.5deg);
+
+    @media (max-width:700px){
+        display: none;
+    }
+}
+
+.f-teeth {
+    @include teeth(540px);
+
+    &::before{
+        @include triteethRight(270px, 100px, -100px);
+    }
+
+    &::after{
+        @include triteethLeft(270px, 100px);
+    }
+
+    @media (max-width:700px){
+        display: none;
+    }
+}
+
+.d-teeth {
+    @include teeth(155px);
+
+    &::before{
+        @include triteethRight(77.5px, 25px, -25px);
+    }
+
+    &::after{
+        @include triteethLeft(77.5px, 25px);
+    }
+}
+
+@for $i from 1 through 16 {
+    $angle: rotate(11.25deg * $i);
+
+    .tooth-#{$i} {
+        transform: $angle;
+    }
+}

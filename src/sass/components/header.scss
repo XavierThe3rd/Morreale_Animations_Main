@@ -1,0 +1,77 @@
+.title-block{
+    background: $pinkCranberry;
+    padding: 56px 42px 65px;
+
+    &::before{
+        @include tritopLeft(438px, 165px solid $pinkCranberry, 0, 427px, 0); 
+    }
+
+    &::after{
+        @include tritopLeft(438px, 165px solid $pinkCranberry, 161px, 0, 0);
+    }
+
+    @media (max-width:1310px){
+        padding:54px 17px;
+
+        &::before{
+            @include tritopLeft(377px, 148px solid $pinkCranberry, 0, 377px, 0); 
+        }
+    
+        &::after{
+            @include tritopLeft(377px, 148px solid $pinkCranberry, 148px, 0, 0);
+        }
+    }
+
+    @media (max-width:1115px){
+        padding:5px;
+        width: auto;
+        display: flex;
+
+        &::before{
+            display: none;
+        }
+    
+        &::after{
+            display: none;
+        }
+    }
+}
+
+.nav-title{
+    background: $mediumCranberry;
+}
+
+%navbar-styles{
+    background: $darkCranberry;
+
+    &::after{
+        @include tritopRight(39px solid $darkCranberry , 39px, 0, -39px);
+    }
+
+    @media (max-width:1115px){
+        width: 80%;
+    
+        &::before{
+            @include tritopLeft(39px, 39px solid $darkCranberry, 0, inherit, -39px);        
+        }
+    }
+}
+
+.navbar{
+    @extend %navbar-styles;
+}
+
+.hidden-navbar{
+    @extend %navbar-styles;
+    opacity: 0.8;
+    display: none;
+    top: 0;
+}
+
+.navbar > ul, .hidden-navbar > ul{
+    margin: 12px 0;
+
+    a{
+        font-size: 15px;
+    }
+}
