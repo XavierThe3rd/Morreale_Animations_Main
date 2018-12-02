@@ -63,7 +63,6 @@
 
 .hidden-navbar{
     @extend %navbar-styles;
-    opacity: 0.8;
     display: none;
     top: 0;
 }

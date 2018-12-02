@@ -3,7 +3,7 @@ console.log(window.innerWidth > 1000);
 window.onscroll = function() {
     if (window.innerWidth > 1075) {   
 
-        if (document.documentElement.scrollTop > 98) {
+        if (window.pageYOffset > 98) {
             document.getElementById("nav2").style.display = "block";
             document.getElementById("nav1").style.display = "none";
         } 
@@ -15,7 +15,7 @@ window.onscroll = function() {
 
     else {
 
-        if (document.documentElement.scrollTop > 168) {
+        if (window.pageYOffset > 168) {
             document.getElementById("nav2").style.display = "block";
             document.getElementById("nav1").style.display = "none";
         } 

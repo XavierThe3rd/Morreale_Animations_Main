@@ -1,5 +1,5 @@
 .reel-right{
-    padding: 100px 200px 50px 0;
+    padding: 100px 100px 50px 0;
     
     p{
         margin: 0 auto;
@@ -17,6 +17,12 @@
     .reel-left{
         display: none;
     }
+
+    @media (max-width:700px){
+        .reel-right > p{
+            padding: 0 30px 100px 30px;
+        }
+    }
 }
 
 .video-block{
@@ -32,9 +38,21 @@ video{
     margin: 25px;
 }
 
+@media (max-width:700px){
+    video{
+        @include gearCircle(325px, 325px, 162.5px); 
+    }
+}
+
 .gear-follow{
     @include gearCircle(500px, 500px, 250px);
     background: black;
+}
+
+@media (max-width:700px){
+    .gear-follow{
+        @include gearCircle(375px, 375px, 187.5px); 
+    }
 }
 
 .gear-drive{
@@ -82,5 +100,49 @@ video{
 
     .tooth-#{$i} {
         transform: $angle;
+    }
+}
+
+.drawings{
+    padding: 50px 150px;
+
+    @media(max-width:1525px){
+        padding: 50px 100px;
+    }
+
+    ul{
+        padding: 50px 0;
+
+        @media (max-width:1115px){
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        li{
+            @include gearCircle(300px, 300px, 150px);
+            background: black;
+
+            @media(max-width:1310px){
+                @include gearCircle(250px, 250px, 125px);
+            }
+
+            img{
+                background: red;
+                @include gearCircle(250px, 250px, 125px);
+
+                @media(max-width:1310px){
+                    @include gearCircle(200px, 200px, 100px);
+                }
+            }
+
+            a{
+                margin: auto;
+                font-size: 30px;
+
+                @media(max-width:1310px){
+                    font-size: 25px;
+                }
+            }
+        }
     }
 }
