@@ -7,15 +7,16 @@
     </head>
     <body>
         <header class="flex between">
-            <div class="title-block rel flex a-center z-2">
+            <div class="title-block rel flex a-center z4">
                 <h1>Morreale Animations</h1>
             </div>
             <div class="nav-wrap grid7 flex column">
-                <div class="nav-title flex center">
+                <div class="nav-title flex center z3">
                     <h2>Portfolio</h2>
                 </div>
                 <div class= "navbar-wrap end flex">
                     <nav id="navbar" class="navbar abs grid5 rel" id="nav1">
+                        <button class="open-nav" onclick="togNav()">Navigation</button>
                         <ul class="even flex">
                             <li class="flex center">
                                 <a href="home.html">Home</a>
@@ -28,7 +29,21 @@
                             </li>
                         </ul>
                     </nav>
+                     <div id="sidewnav-wrapper" class="sidenav-wrapper flex center">
+                        <ul id="mySidenav" class="sidenav grid8 center column z2 abs">
+                            <li class="flex center">
+                                <a href="#">Home</a>
+                            </li>
+                            <li class="flex center">
+                                <a href="#">About</a>
+                            </li>
+                            <li class="flex center">
+                                <a href="#">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
                     <nav class="hidden-navbar grid5 fix z3" id="nav2">
+                        <button class="open-nav" onclick="togNav2()">Navigation</button>
                         <ul class="even flex">
                             <li class="flex center">
                                 <a href="home.html">Home</a>
@@ -41,25 +56,38 @@
                             </li>
                         </ul>
                     </nav>
+                    <div id="sidewnav-wrapper2" class="sidenav-wrapper2 flex center">
+                        <ul id="mySidenav2" class="sidenav grid8 center column z2 fix">
+                            <li class="flex center">
+                                <a href="#">Home</a>
+                            </li>
+                            <li class="flex center">
+                                <a href="#">About</a>
+                            </li>
+                            <li class="flex center">
+                                <a href="#">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </header>
         <div class="reel-wrap flex between grid10">
-            <div class="reel-left grid5"></div>
-            <div class="reel-right flex column a-center grid5">
+            <div class="reel-empty grid5"></div>
+            <div class="reel-video flex column a-center grid5">
                 <h3>Demo Reel</h3>
                 <p>-----------------------------------instert description here------------------------------</p>
                <div class="video-wrap flex">
-                   <div id="gear-state" class="video-block abs z1">
+                   <div id="gear-state1" class="video-block1 abs z1">
                         <video controls></video>
                    </div>
-                   <div id="gear-drive" class="gear-drive flex center a-center rel z2">
+                   <div id="gear-drive1" class="gear-drive drive1 flex center a-center rel z1m">
                         <div class="d-teeth abs blk tooth-4"></div>
                         <div class="d-teeth abs blk tooth-8"></div>
                         <div class="d-teeth abs blk tooth-12"></div>
                         <div class="d-teeth abs blk tooth-16"></div>
                     </div>
-                    <div id="gear-follow" class="gear-follow flex center a-center rel">
+                    <div id="gear-follow1" class="gear-follow flex center a-center rel">
                         <div class="f-teeth abs blk tooth-1"></div>
                         <div class="f-teeth abs blk tooth-2"></div>
                         <div class="f-teeth abs blk tooth-3"></div>
@@ -97,6 +125,49 @@
                 </li>   
             </ul>
         </div>
+        <div class="reel-wrap flex between grid10">
+            <div class="reel-video flex column a-center grid5">
+                <h3>Story Board</h3>
+                <p>-----------------------------------instert description here------------------------------</p>
+               <div class="video-wrap flex">
+                   <div id="gear-state2" class="video-block2 abs z1">
+                        <video controls></video>
+                   </div>
+                    <div id="gear-follow2" class="gear-follow flex center a-center rel">
+                        <div class="f-teeth abs blk tooth-1"></div>
+                        <div class="f-teeth abs blk tooth-2"></div>
+                        <div class="f-teeth abs blk tooth-3"></div>
+                        <div class="f-teeth abs blk tooth-4"></div>
+                        <div class="f-teeth abs blk tooth-5"></div>
+                        <div class="f-teeth abs blk tooth-6"></div>
+                        <div class="f-teeth abs blk tooth-7"></div>
+                        <div class="f-teeth abs blk tooth-8"></div>
+                        <div class="f-teeth abs blk tooth-9"></div>
+                        <div class="f-teeth abs blk tooth-10"></div>
+                        <div class="f-teeth abs blk tooth-11"></div>
+                        <div class="f-teeth abs blk tooth-12"></div>
+                        <div class="f-teeth abs blk tooth-13"></div>
+                        <div class="f-teeth abs blk tooth-14"></div>
+                        <div class="f-teeth abs blk tooth-15"></div>
+                        <div class="f-teeth abs blk tooth-16"></div>
+                    </div> 
+                    <div id="gear-drive2" class="gear-drive drive2 flex center a-center rel z1m">
+                        <div class="d-teeth abs blk tooth-4"></div>
+                        <div class="d-teeth abs blk tooth-8"></div>
+                        <div class="d-teeth abs blk tooth-12"></div>
+                        <div class="d-teeth abs blk tooth-16"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="reel-empty grid5"></div>
+        </div>
+        <footer class="flex center">
+            <div class="foot flex center rel grid7">
+                <p class="flex column"> Like this website? See more at 
+                    <a href="#">Thomas Grasso Pages</a>
+                </p>
+            </div>
+        </footer>
         <script src="./js/script.js"></script>
     </body>
 </html>

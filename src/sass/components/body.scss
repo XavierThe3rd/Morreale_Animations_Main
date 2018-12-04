@@ -1,5 +1,5 @@
-.reel-right{
-    padding: 100px 100px 50px 0;
+.reel-video{
+    padding: 100px 150px 50px 150px;
     
     p{
         margin: 0 auto;
@@ -14,21 +14,27 @@
 }
 
 @media (max-width:1115px){
-    .reel-left{
+    .reel-empty{
         display: none;
     }
 
     @media (max-width:700px){
-        .reel-right > p{
+        .reel-video > p{
             padding: 0 30px 100px 30px;
         }
     }
 }
 
-.video-block{
+.video-block1{
     margin: 0 125px;
+}
 
-    @media (max-width:700px){
+.video-block2{
+    margin: 0;
+}
+
+@media (max-width:700px){
+    .video-block1, .video-block2{
         margin: 0 auto;
     }
 }
@@ -40,7 +46,7 @@ video{
 
 @media (max-width:700px){
     video{
-        @include gearCircle(325px, 325px, 162.5px); 
+        @include gearCircle(300px, 300px, 150px); 
     }
 }
 
@@ -51,20 +57,26 @@ video{
 
 @media (max-width:700px){
     .gear-follow{
-        @include gearCircle(375px, 375px, 187.5px); 
+        @include gearCircle(350px, 350px, 175px); 
     }
 }
 
 .gear-drive{
     @include gearCircle(125px, 125px, 62.5px);
     background: black;
-    top: 399px;
-    left: 56px;
     transform: rotate(5.5deg);
 
     @media (max-width:700px){
         display: none;
     }
+}
+
+.drive1{
+    @include positioning(399px, 56px, inherit);
+}
+
+.drive2{
+    @include positioning(408px, inherit, 64px);
 }
 
 .f-teeth {
@@ -104,14 +116,14 @@ video{
 }
 
 .drawings{
-    padding: 50px 150px;
+    padding: 50px 150px 0;
 
     @media(max-width:1525px){
         padding: 50px 100px;
     }
 
     ul{
-        padding: 50px 0;
+        padding: 50px 0 0;
 
         @media (max-width:1115px){
             flex-direction: column;

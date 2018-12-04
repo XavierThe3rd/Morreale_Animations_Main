@@ -1,0 +1,31 @@
+footer{
+    margin: 200px 0 0;
+}
+
+.foot{
+    background: #ff00b3;
+
+    &::before{
+        @include tribottomLeft(163px, 163px, -163px);
+    }
+
+    &::after{
+        @include tribottomRight(163px, 163px, -163px);
+    }
+
+    @media(max-width:1115px){
+
+        &::before{
+            display: none;
+        }
+    
+        &::after{
+           display: none;
+        }
+    }
+}
+
+.foot > p, .foot > a{
+    padding: 61.3px 0;
+    font-size: 20px;
+}

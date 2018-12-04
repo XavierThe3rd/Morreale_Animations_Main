@@ -27,28 +27,28 @@
     left: $p-left;
 }
 
-@mixin tribottomRight ($left, $top, $p-left){
+@mixin tribottomRight ($left, $top, $p-right){
     content: "";
     width: 0;
     height: 0;
     border: 0 solid transparent;
     border-bottom-width: 0px;
     border-top-width: $top;
-    border-left: $left solid black;
-    position: absolute;
-    left: $p-left;
-}
-
-@mixin tribottomLeft($right, $top, $p-right){
-    content: "";
-    width: 0;
-    height: 0;
-    border: 0 solid transparent;
-    border-top-width: $top;
-    border-bottom-width: 0px;
-    border-right: $right solid black;
+    border-left: $left solid $pinkCranberry;
     position: absolute;
     right: $p-right;
+}
+
+@mixin tribottomLeft($right, $top, $p-left){
+    content: "";
+    width: 0;
+    height: 0;
+    border: 0 solid transparent;
+    border-top-width: $top;
+    border-bottom-width: 0px;
+    border-right: $right solid $pinkCranberry;
+    position: absolute;
+    left: $p-left;
 }
 
 @mixin gearCircle($width, $height, $radius){
@@ -84,4 +84,10 @@
     border-top-width: $equal;
     border-left: $left solid black;
     left:20px;
+}
+
+@mixin positioning($top, $left, $right){
+    top: $top;
+    left: $left;
+    right: $right;
 }

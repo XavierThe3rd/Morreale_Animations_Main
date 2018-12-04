@@ -7,6 +7,8 @@ h1{
 h2{ 
     font-size: 60px;
     padding: 19px 0;
+    letter-spacing: 4px;
+    text-transform: uppercase;
     margin: 0 0 0 290px;
     color: #ffff;
     font-family: 'Times New Roman', Times, serif;
@@ -36,6 +38,11 @@ p{
     font-family: 'Times New Roman', Times, serif;
 }
 
+button{
+    display:none;
+    position: absolute;
+}
+
 @media (max-width:1115px){
     header{
         flex-direction: column;
@@ -51,5 +58,9 @@ p{
 
     h3{
         padding: 150px 0 50px;
+    }
+
+    button{
+        display:flex;
     }
 }
