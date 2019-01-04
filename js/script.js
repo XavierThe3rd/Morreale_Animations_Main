@@ -105,11 +105,9 @@ var nav = document.getElementById("mySidenav2");
     if (nav.style.height === "0%") {
         nav.style.height = "30%";
         nav.style.padding = "60px 0px 40px";
-        nav.style.zIndex = "2";
     } else{
         nav.style.height = "0%";
         nav.style.padding = "0px";
-        nav.style.zIndex = "-1";
     }
 }
 
