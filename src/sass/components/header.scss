@@ -95,6 +95,7 @@
     @media(max-width:1115px){
         display: flex;
         transition: 0.5s;
+        -moz-transition: 0.5s;
         background: $mediumCranberry;
         opacity: 0.90;
         height: 0%;
@@ -103,6 +104,7 @@
         a{
             font-size: 20px;
             transition: 0.25s;
+            -moz-transition: 0.25;
             padding: 22px;
         }
     }

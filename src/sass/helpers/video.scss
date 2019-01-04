@@ -21,7 +21,7 @@ video{
   
   .video-wrapper:focus > video + .video-controls,
   .video-wrapper:hover > video + .video-controls {
-    display: block;
+    display: flex;
   }
 
 .btn {
