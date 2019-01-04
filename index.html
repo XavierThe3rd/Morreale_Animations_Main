@@ -3,15 +3,16 @@
     <head>
         <title> Morreale Portfolio </title>
         <link href="./css/styles.css" type="text/css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
     </head>
     <body>
         <header class="flex between">
-            <div class="title-block rel flex a-center z4">
+            <div class="title-block rel flex a-center z2">
                 <h1>Morreale Animations</h1>
             </div>
             <div id ="navWrap"class="nav-wrap grid7 flex column">
-                <div id="navTitle" class="nav-title grid10 flex center z3">
+                <div id="navTitle" class="nav-title grid10 flex center z1">
                     <h2>Portfolio</h2>
                 </div>
                 <div class= "navbar-wrap end flex">
@@ -19,7 +20,7 @@
                         <button class="open-nav" onclick="togNav()">Navigation</button>
                         <ul class="even flex">
                             <li class="flex center">
-                                <a href="home.html">Home</a>
+                                <a href="home.html" class="z3">Home</a>
                             </li>
                             <li class="flex center">
                                 <a href="about.html">About</a>
@@ -78,32 +79,53 @@
                 <h3>Demo Reel</h3>
                 <p>-----------------------------------instert description here------------------------------</p>
                <div class="video-wrap flex">
-                   <div id="gear-state1" class="video-block1 abs z1">
-                        <video controls></video>
+                   <div id="gear-state1" class="video-block1 video-wrapper abs z1">
+                        <video class="video-element"poster="https://s3.amazonaws.com/coverr-public/poster/Porto_View.jpg" preload="metadata">
+                            <source src="https://coverr.co/s3/mp4/Porto_View.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-controls abs">
+                            <button class="btn btn-backward"><span class="fa fa-backward"></span></button>
+                        
+                            <button class="btn btn-play"><span class="fa fa-play"></span></button>
+                        
+                            <button class="btn btn-forward"><span class="fa fa-forward"></span></button>
+                        
+                            <button class="btn btn-stop"><span class="fa fa-stop"></span></button>
+                        
+                            <button class="btn btn-reset" hidden><span class="fa fa-undo"></span></button>
+                        
+                            <button class="btn btn-mute"><span class="fa fa-volume-off"></span></button>
+                        
+                            <button class="btn btn-expand"><span class="fa fa-expand"></span></button>
+                          </div>
+                        
+                          <div class="progress-bar">
+                            <div class="progress-bar-fill"></div>
+                        </div>
                    </div>
                    <div id="gear-drive1" class="gear-drive drive1 flex center a-center rel z1m">
-                        <div class="d-teeth abs blk tooth-4"></div>
-                        <div class="d-teeth abs blk tooth-8"></div>
-                        <div class="d-teeth abs blk tooth-12"></div>
-                        <div class="d-teeth abs blk tooth-16"></div>
+                        <div class="d-teeth abs tooth-4"></div>
+                        <div class="d-teeth abs tooth-8"></div>
+                        <div class="d-teeth abs tooth-12"></div>
+                        <div class="d-teeth abs tooth-16"></div>
                     </div>
                     <div id="gear-follow1" class="gear-follow flex center a-center rel">
-                        <div class="f-teeth abs blk tooth-1"></div>
-                        <div class="f-teeth abs blk tooth-2"></div>
-                        <div class="f-teeth abs blk tooth-3"></div>
-                        <div class="f-teeth abs blk tooth-4"></div>
-                        <div class="f-teeth abs blk tooth-5"></div>
-                        <div class="f-teeth abs blk tooth-6"></div>
-                        <div class="f-teeth abs blk tooth-7"></div>
-                        <div class="f-teeth abs blk tooth-8"></div>
-                        <div class="f-teeth abs blk tooth-9"></div>
-                        <div class="f-teeth abs blk tooth-10"></div>
-                        <div class="f-teeth abs blk tooth-11"></div>
-                        <div class="f-teeth abs blk tooth-12"></div>
-                        <div class="f-teeth abs blk tooth-13"></div>
-                        <div class="f-teeth abs blk tooth-14"></div>
-                        <div class="f-teeth abs blk tooth-15"></div>
-                        <div class="f-teeth abs blk tooth-16"></div>
+                        <div class="f-teeth abs tooth-1"></div>
+                        <div class="f-teeth abs tooth-2"></div>
+                        <div class="f-teeth abs tooth-3"></div>
+                        <div class="f-teeth abs tooth-4"></div>
+                        <div class="f-teeth abs tooth-5"></div>
+                        <div class="f-teeth abs tooth-6"></div>
+                        <div class="f-teeth abs tooth-7"></div>
+                        <div class="f-teeth abs tooth-8"></div>
+                        <div class="f-teeth abs tooth-9"></div>
+                        <div class="f-teeth abs tooth-10"></div>
+                        <div class="f-teeth abs tooth-11"></div>
+                        <div class="f-teeth abs tooth-12"></div>
+                        <div class="f-teeth abs tooth-13"></div>
+                        <div class="f-teeth abs tooth-14"></div>
+                        <div class="f-teeth abs tooth-15"></div>
+                        <div class="f-teeth abs tooth-16"></div>
                     </div> 
                 </div>
             </div>
@@ -130,32 +152,53 @@
                 <h3>Story Board</h3>
                 <p>-----------------------------------instert description here------------------------------</p>
                <div class="video-wrap flex">
-                   <div id="gear-state2" class="video-block2 abs z1">
-                        <video controls></video>
+                   <div id="gear-state2" class="video-block2 video-wrapper abs z1">
+                        <video class="video-element"poster="https://s3.amazonaws.com/coverr-public/poster/Porto_View.jpg" preload="metadata">
+                            <source src="https://coverr.co/s3/mp4/Porto_View.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-controls abs">
+                            <button class="btn btn-backward"><span class="fa fa-backward"></span></button>
+                        
+                            <button class="btn btn-play"><span class="fa fa-play"></span></button>
+                        
+                            <button class="btn btn-forward"><span class="fa fa-forward"></span></button>
+                        
+                            <button class="btn btn-stop"><span class="fa fa-stop"></span></button>
+                        
+                            <button class="btn btn-reset" hidden><span class="fa fa-undo"></span></button>
+                        
+                            <button class="btn btn-mute"><span class="fa fa-volume-off"></span></button>
+                        
+                            <button class="btn btn-expand"><span class="fa fa-expand"></span></button>
+                          </div>
+                        
+                          <div class="progress-bar">
+                            <div class="progress-bar-fill"></div>
+                        </div>
                    </div>
                     <div id="gear-follow2" class="gear-follow flex center a-center rel">
-                        <div class="f-teeth abs blk tooth-1"></div>
-                        <div class="f-teeth abs blk tooth-2"></div>
-                        <div class="f-teeth abs blk tooth-3"></div>
-                        <div class="f-teeth abs blk tooth-4"></div>
-                        <div class="f-teeth abs blk tooth-5"></div>
-                        <div class="f-teeth abs blk tooth-6"></div>
-                        <div class="f-teeth abs blk tooth-7"></div>
-                        <div class="f-teeth abs blk tooth-8"></div>
-                        <div class="f-teeth abs blk tooth-9"></div>
-                        <div class="f-teeth abs blk tooth-10"></div>
-                        <div class="f-teeth abs blk tooth-11"></div>
-                        <div class="f-teeth abs blk tooth-12"></div>
-                        <div class="f-teeth abs blk tooth-13"></div>
-                        <div class="f-teeth abs blk tooth-14"></div>
-                        <div class="f-teeth abs blk tooth-15"></div>
-                        <div class="f-teeth abs blk tooth-16"></div>
+                        <div class="f-teeth abs tooth-1"></div>
+                        <div class="f-teeth abs tooth-2"></div>
+                        <div class="f-teeth abs tooth-3"></div>
+                        <div class="f-teeth abs tooth-4"></div>
+                        <div class="f-teeth abs tooth-5"></div>
+                        <div class="f-teeth abs tooth-6"></div>
+                        <div class="f-teeth abs tooth-7"></div>
+                        <div class="f-teeth abs tooth-8"></div>
+                        <div class="f-teeth abs tooth-9"></div>
+                        <div class="f-teeth abs tooth-10"></div>
+                        <div class="f-teeth abs tooth-11"></div>
+                        <div class="f-teeth abs tooth-12"></div>
+                        <div class="f-teeth abs tooth-13"></div>
+                        <div class="f-teeth abs tooth-14"></div>
+                        <div class="f-teeth abs tooth-15"></div>
+                        <div class="f-teeth abs tooth-16"></div>
                     </div> 
                     <div id="gear-drive2" class="gear-drive drive2 flex center a-center rel z1m">
-                        <div class="d-teeth abs blk tooth-4"></div>
-                        <div class="d-teeth abs blk tooth-8"></div>
-                        <div class="d-teeth abs blk tooth-12"></div>
-                        <div class="d-teeth abs blk tooth-16"></div>
+                        <div class="d-teeth abs tooth-4"></div>
+                        <div class="d-teeth abs tooth-8"></div>
+                        <div class="d-teeth abs tooth-12"></div>
+                        <div class="d-teeth abs tooth-16"></div>
                     </div>
                 </div>
             </div>

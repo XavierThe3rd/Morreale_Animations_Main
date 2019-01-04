@@ -1,9 +1,13 @@
 footer{
     margin: 200px 0 0;
+
+    @media(max-width:1115px){
+        margin: 100px 0 0;
+    }
 }
 
 .foot{
-    background: #ff00b3;
+    background: $pinkCranberry;
 
     &::before{
         @include tribottomLeft(163px, 163px, -163px);

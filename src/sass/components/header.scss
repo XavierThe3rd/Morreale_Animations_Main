@@ -90,6 +90,7 @@
 
 .sidenav{
     display:none;
+    z-index: -1;
 
     @media(max-width:1115px){
         display: flex;

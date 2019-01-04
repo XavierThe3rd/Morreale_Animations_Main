@@ -1,6 +1,6 @@
 h1{
     font-size: 40px;
-    color: #ffff;
+    color: $pureWhite;
     font-family: 'Times New Roman', Times, serif;
 }
 
@@ -10,13 +10,13 @@ h2{
     letter-spacing: 4px;
     text-transform: uppercase;
     margin: 0 0 0 290px;
-    color: #ffff;
+    color: $pureWhite;
     font-family: 'Times New Roman', Times, serif;
 }
 
 h3{
     font-size: 50px;
-    color:#ffff;
+    color: $pureWhite;
     margin: 0 auto;
     padding: 50px 0;
     font-family: 'Times New Roman', Times, serif;
@@ -27,18 +27,18 @@ li{
 }
 
 a{
-    color: #ffffff;
+    color: $pureWhite;
     text-decoration: none;
     text-transform: uppercase;
     font-family: 'Times New Roman', Times, serif;
 }
 
 p{
-    color: #ffffff;
+    color: $pureWhite;
     font-family: 'Times New Roman', Times, serif;
 }
 
-button{
+.open-nav{
     display:none;
     position: absolute;
 }
@@ -57,10 +57,10 @@ button{
     }
 
     h3{
-        padding: 400px 0 50px;
+        padding: 100px 0 50px;
     }
 
-    button{
+    .open-nav{
         display:flex;
     }
 }

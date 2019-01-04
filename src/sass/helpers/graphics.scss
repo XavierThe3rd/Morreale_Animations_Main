@@ -1,0 +1,64 @@
+.gear-follow{
+    @include gearCircle(500px, 500px, 250px);
+    background: $darkCranberry;
+}
+
+@media (max-width:700px){
+    .gear-follow{
+        @include gearCircle(350px, 350px, 175px); 
+    }
+}
+
+.gear-drive{
+    @include gearCircle(125px, 125px, 62.5px);
+    background: $mediumCranberry;
+    transform: rotate(5.5deg);
+
+    @media (max-width:700px){
+        display: none;
+    }
+}
+
+.drive1{
+    @include positioning(399px, 56px, inherit);
+}
+
+.drive2{
+    @include positioning(408px, inherit, 64px);
+}
+
+.f-teeth {
+    @include teeth(540px, $darkCranberry);
+
+    &::before{
+        @include triteethRight(270px, 100px, -100px, $darkCranberry);
+    }
+
+    &::after{
+        @include triteethLeft(270px, 100px, $darkCranberry);
+    }
+
+    @media (max-width:700px){
+        display: none;
+    }
+}
+
+.d-teeth {
+    @include teeth(155px, $mediumCranberry);
+
+    &::before{
+        @include triteethRight(77.5px, 25px, -25px, $mediumCranberry);
+    }
+
+    &::after{
+        @include triteethLeft(77.5px, 25px, $mediumCranberry);
+    }
+}
+
+@for $i from 1 through 16 {
+    $angle: rotate(11.25deg * $i);
+
+    .tooth-#{$i} {
+        transform: $angle;
+    }
+}

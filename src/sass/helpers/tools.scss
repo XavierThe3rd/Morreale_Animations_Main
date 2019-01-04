@@ -57,12 +57,13 @@
     border-radius: $radius;
 }
 
-@mixin teeth($height){
+@mixin teeth($height, $color){
     width: 20px;
     height: $height;
+    background: $color;
 }
 
-@mixin triteethRight($equal, $right, $p-left){
+@mixin triteethRight($equal, $right, $p-left, $color){
     content: "";
     position: absolute;
     width: 0;
@@ -70,11 +71,11 @@
     border: 0 solid transparent;
     border-top-width: $equal;
     border-bottom-width: $equal;
-    border-right: $right solid black;
+    border-right: $right solid $color;
     left: $p-left;
 }
 
-@mixin triteethLeft($equal, $left){
+@mixin triteethLeft($equal, $left, $color){
     content: "";
     position: absolute;
     width: 0;
@@ -82,7 +83,7 @@
     border: 0 solid transparent;
     border-bottom-width: $equal;
     border-top-width: $equal;
-    border-left: $left solid black;
+    border-left: $left solid $color;
     left:20px;
 }
 
