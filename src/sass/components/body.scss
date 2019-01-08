@@ -108,12 +108,6 @@
     }
 }
 
-.main-link{
-    width: 300px;
-    background: transparent;
-    border: 0;
-}
-
 .drawings{
     padding: 50px 150px 0;
 
@@ -128,20 +122,32 @@
             flex-direction: column;
             align-items: center;
         }
+
+        .main-link{
+            width: 300px;
+            background: transparent;
+            border: 0;
+            margin: 0;
+            padding:0;
         
-        li{
-            @include gearCircle(300px, 300px, 150px);
-            background: $mediumCranberry;
-
             @media(max-width:1310px){
-                @include gearCircle(250px, 250px, 125px);
-            }
-
-            img{
-                @include gearCircle(250px, 250px, 125px);
+                width: 250px;
+            }       
+        
+            li{
+                @include gearCircle(300px, 300px, 150px);
+                background: $mediumCranberry;
 
                 @media(max-width:1310px){
-                    @include gearCircle(200px, 200px, 100px);
+                    @include gearCircle(250px, 250px, 125px);
+                }
+
+                img{
+                    @include gearCircle(250px, 250px, 125px);
+
+                    @media(max-width:1310px){
+                        @include gearCircle(200px, 200px, 100px);
+                    }
                 }           
             }
         }
