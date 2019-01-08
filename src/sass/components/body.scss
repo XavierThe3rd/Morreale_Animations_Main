@@ -43,6 +43,10 @@
     }
 }
 
+.progress-bar-fill{
+    display: none;
+}
+
 .gear-follow{
     @include gearCircle(500px, 500px, 250px);
     background: $darkCranberry;
