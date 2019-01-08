@@ -65,11 +65,11 @@
 }
 
 .drive1{
-    @include positioning(399px, 56px, inherit);
+    @include positioning(399px, 56px, inherit, inherit);
 }
 
 .drive2{
-    @include positioning(408px, inherit, 64px);
+    @include positioning(408px, inherit, 64px, inherit);
 }
 
 .f-teeth {
@@ -108,6 +108,12 @@
     }
 }
 
+.main-link{
+    width: 300px;
+    background: transparent;
+    border: 0;
+}
+
 .drawings{
     padding: 50px 150px 0;
 
@@ -132,24 +138,87 @@
             }
 
             img{
-                background: red;
                 @include gearCircle(250px, 250px, 125px);
 
                 @media(max-width:1310px){
                     @include gearCircle(200px, 200px, 100px);
-                }
-            }
-
-            a{
-                margin: auto;
-                font-size: 30px;
-
-                @media(max-width:1310px){
-                    font-size: 25px;
-                }
+                }           
             }
         }
     }
 }
 
+.lightbox {
+    @include positioning(0, 0, inherit, inherit);
+    background: rgba(0,0,0,0.8);
+}
+
+.closebtn{
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    font-size: 40px;
+}
+ 
+ .slideshow-container {
+    @include gearCircle(900px, 600px, 0);
+
+    @media(max-width:1115px){
+        @include gearCircle(650px, 400px, 0);
+    }
+
+    @media(max-width:700px){
+        @include gearCircle(375px, 250px, 0);
+    }
+}
+  
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    margin-top: -30px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 50px;
+    transition: 0.6s ease;
+}
+  
+.next {
+    right: 0;
+}
+
+.prev{
+    left:0
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.active-slide {
+    display:flex;
+}
+
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    top: 0;
+}
+  
+.dot {
+    @include gearCircle(13px, 13px, 6.5px);
+    margin: 0 2px;
+    background-color: #bbb;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+  
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+.checkers{
+    bottom: 20px;
+}
 

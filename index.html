@@ -9,64 +9,64 @@
     <body>
         <header class="flex between">
             <div class="title-block rel flex a-center z3">
-                <h1>Morreale Animations</h1>
+                <h1 class="roman">Morreale Animations</h1>
             </div>
             <div id ="navWrap"class="nav-wrap grid7 flex column">
                 <div id="navTitle" class="nav-title grid10 flex center z2">
-                    <h2>Portfolio</h2>
+                    <h2 class="roman">Portfolio</h2>
                 </div>
                 <div class= "navbar-wrap end flex">
                     <nav id="navBar" class="navbar abs grid5 rel">
-                        <button class="open-nav" onclick="togNav()">Navigation</button>
+                        <button class="open-nav none abs" onclick="togNav()">Navigation</button>
                         <ul class="even flex">
                             <li class="flex center">
-                                <a href="home.html" class="z4">Home</a>
+                                <a class="roman" href="home.html" class="z4">Home</a>
                             </li>
                             <li class="flex center">
-                                <a href="about.html">About</a>
+                                <a class="roman" href="about.html">About</a>
                             </li>
                             <li class="flex center" >
-                                <a href="contact.html">Contact</a>
+                                <a class="roman" href="contact.html">Contact</a>
                             </li>
                         </ul>
                     </nav>
                      <div id="sidewnav-wrapper" class="sidenav-wrapper flex center grid10">
                         <ul id="mySidenav" class="sidenav center grid8 column z1 abs">
                             <li class="flex center">
-                                <a href="#">Home</a>
+                                <a class="roman" href="#">Home</a>
                             </li>
                             <li class="flex center">
-                                <a href="#">About</a>
+                                <a class="roman" href="#">About</a>
                             </li>
                             <li class="flex center">
-                                <a href="#">Contact</a>
+                                <a class="roman" href="#">Contact</a>
                             </li>
                         </ul>
                     </div>
                     <nav class="hidden-navbar grid5 fix z1" id="nav2">
-                        <button class="open-nav" onclick="togNav2()">Navigation</button>
+                        <button class="open-nav none abs" onclick="togNav2()">Navigation</button>
                         <ul class="even flex">
                             <li class="flex center">
-                                <a href="home.html">Home</a>
+                                <a class="roman" href="home.html">Home</a>
                             </li>
                             <li class="flex center">
-                                <a href="about.html">About</a>
+                                <a class="roman" href="about.html">About</a>
                             </li>
                             <li class="flex center">
-                                <a href="contact.html">Contact</a>
+                                <a class="roman" href="contact.html">Contact</a>
                             </li>
                         </ul>
                     </nav>
                     <div id="sidewnav-wrapper2" class="sidenav-wrapper2 flex center">
                         <ul id="mySidenav2" class="sidenav grid8 center column z1 fix">
                             <li class="flex center">
-                                <a href="#">Home</a>
+                                <a class="roman" href="#">Home</a>
                             </li>
                             <li class="flex center">
-                                <a href="#">About</a>
+                                <a class="roman" href="#">About</a>
                             </li>
                             <li class="flex center">
-                                <a href="#">Contact</a>
+                                <a class="roman" href="#">Contact</a>
                             </li>
                         </ul>
                     </div>
@@ -76,7 +76,7 @@
         <div class="reel-wrap flex between grid10">
             <div class="reel-empty grid5"></div>
             <div class="reel-video flex column a-center grid5">
-                <h3>Demo Reel</h3>
+                <h3 class="roman">Demo Reel</h3>
                 <p>-----------------------------------instert description here------------------------------</p>
                <div class="video-wrap flex">
                    <div id="gear-state1" class="video-block1 video-wrapper abs z0">
@@ -129,27 +129,130 @@
                     </div> 
                 </div>
             </div>
-        </div>
+        </div> 
         <div class="drawings flex column">
-            <h3>Drawings</h3>
+            <h3 class="roman">Drawings</h3>
             <ul class="flex between">
-                <li class="flex a-center center">
-                    <img class="abs">
-                    <a href="#" class="rel">Geometrics</a>
-                </li>
-                <li class="flex a-center center">
-                    <img class="abs">
-                    <a href="#"class="rel">anime</a>
-                </li>
-                <li class="flex a-center center"> 
-                    <img class="abs">
-                    <a href="#" class="rel">more</a>
-                </li>   
+                <button class="main-link auto point"type="button" onclick="openNav1()">
+                    <li class="flex a-center center">
+                        <a>
+                            <img src="http://www.w3schools.com/howto/img_mountains_wide.jpg">
+                        </a>
+                    </li>
+                </button>
+                <button class="main-link auto point"type="button" onclick="openNav2()">
+                    <li class="flex a-center center">
+                        <a>
+                            <img src="http://www.w3schools.com/howto/img_mountains_wide.jpg">
+                        </a>
+                    </li>
+                </button>
+                <button class="main-link auto point"type="button" onclick="openNav3()">
+                    <li class="flex a-center center">
+                        <a>
+                            <img src="http://www.w3schools.com/howto/img_mountains_wide.jpg">
+                        </a>
+                    </li>
+                </button>
             </ul>
         </div>
+        
+        <div class="lightbox none center column fix grid10 h10 z4" id="img1">
+            <a href="javascript:void(0)" class="closebtn auto" onclick="closeNav1()">&times;</a>
+
+            <div class="slideshow-container flex rel center auto">
+                <div class="mySlides none fade">
+                    <div class="numbertext abs">1 / 3</div>
+                    <img src="http://www.w3schools.com/howto/img_mountains_wide.jpg" style="width:100%">
+                </div>
+                
+                <div class="mySlides none fade">
+                    <div class="numbertext abs">2 / 3</div>
+                    <img src="http://www.w3schools.com/howto/img_fjords_wide.jpg" style="width:100%">
+                </div>
+                
+                <div class="mySlides none fade">
+                    <div class="numbertext abs">3 / 3</div>
+                    <img src="http://www.w3schools.com/howto/img_nature_wide.jpg" style="width:100%">
+                </div>
+                
+                <a class="prev">&#10094;</a>
+                <a class="next">&#10095;</a>
+                
+                <div class= "checkers abs">
+                    <span class="dot point"></span>
+                    <span class="dot point" ></span>
+                    <span class="dot point" ></span>
+                </div>
+            </div>
+            <br>
+        </div>
+  
+        <div class="lightbox none center column fix grid10 h10 z4" id="img2">
+            <a href="javascript:void(0)" class="closebtn auto" onclick="closeNav2()">&times;</a>
+
+            <div class="slideshow-container flex rel center auto">
+                <div class="mySlides none fade">
+                    <div class="numbertext abs">1 / 3</div>
+                    <img src="http://www.w3schools.com/howto/img_mountains_wide.jpg" style="width:100%">
+                </div>
+                
+                <div class="mySlides none fade">
+                    <div class="numbertext abs">2 / 3</div>
+                    <img src="http://www.w3schools.com/howto/img_fjords_wide.jpg" style="width:100%">
+                </div>
+                
+                <div class="mySlides none fade">
+                    <div class="numbertext abs">3 / 3</div>
+                    <img src="http://www.w3schools.com/howto/img_nature_wide.jpg" style="width:100%">
+                </div>
+                
+                <a class="prev">&#10094;</a>
+                <a class="next">&#10095;</a>
+                
+                <div class= "checkers abs">
+                    <span class="dot point"></span>
+                    <span class="dot point" ></span>
+                    <span class="dot point" ></span>
+                </div>
+            </div>
+            <br>
+        </div>
+
+        <div class="lightbox none center column fix grid10 h10 z4" id="img3">
+            <a href="javascript:void(0)" class="closebtn auto" onclick="closeNav3()">&times;</a>
+
+            <div class="slideshow-container flex rel center auto">
+                <div class="mySlides none fade">
+                    <div class="numbertext abs">1 / 3</div>
+                    <img src="http://www.w3schools.com/howto/img_mountains_wide.jpg" style="width:100%">
+                </div>
+                
+                <div class="mySlides none fade">
+                    <div class="numbertext abs">2 / 3</div>
+                    <img src="http://www.w3schools.com/howto/img_fjords_wide.jpg" style="width:100%">
+                </div>
+                
+                <div class="mySlides none fade">
+                    <div class="numbertext abs">3 / 3</div>
+                    <img src="http://www.w3schools.com/howto/img_nature_wide.jpg" style="width:100%">
+                </div>
+                
+                <a class="prev">&#10094;</a>
+                <a class="next">&#10095;</a>
+                
+                <div class="checkers abs">
+                    <span class="dot point"></span>
+                    <span class="dot point" ></span>
+                    <span class="dot point" ></span>
+                </div>
+            </div>
+            <br>
+        </div>
+
         <div class="reel-wrap flex between grid10">
             <div class="reel-video flex column a-center grid5">
-                <h3>Story Board</h3>
+                <h3 class="roman">Story Board</h3>
                 <p>-----------------------------------instert description here------------------------------</p>
                <div class="video-wrap flex">
                    <div id="gear-state2" class="video-block2 video-wrapper abs z0">
@@ -206,7 +309,7 @@
         </div>
         <footer class="flex center">
             <div class="foot flex center rel grid7">
-                <p class="flex column"> Like this website? See more at 
+                <p class="flex column roman"> Like this website? See more at 
                     <a href="#">Thomas Grasso Pages</a>
                 </p>
             </div>

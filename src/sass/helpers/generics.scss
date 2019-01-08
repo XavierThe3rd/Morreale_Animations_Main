@@ -130,4 +130,36 @@
 
 /*----------------z-index-----------------*/
 
-/*-----------------colors-----------------*/
+/*-----------------fonts------------------*/
+
+.roman{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.varela{
+    font-family: "Varela Round", sans-serif;
+}
+
+/*-----------------fonts------------------*/
+
+/*-----------------other------------------*/
+
+.none{
+    display: none;
+}
+
+.h10{
+    height: 100%;
+}
+
+.opc0{
+    opacity: 0;
+}
+
+.auto{
+    margin: 0 auto;
+}
+
+.point{
+    cursor: pointer;
+}
