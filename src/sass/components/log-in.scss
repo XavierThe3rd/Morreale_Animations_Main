@@ -1,0 +1,138 @@
+.log-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: $pinkCranberry;
+
+    ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        li{
+            position: absolute;
+            left: 100px;
+
+            a{
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+.nav-login{
+     display: flex;
+     padding: 50px;
+
+     h1{
+         font-size: 50px;
+         padding: 0 20px;
+     }
+
+    input{
+        width: 200px;
+        height: 40px;
+        padding: 0px 10px;
+        margin: 7px 10px 3px;
+        border: none;
+        border-radius: 20px;
+        background: #ccc;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 20px;
+        color: #111;
+    }
+        button{
+        width: 100px;
+        height: 40px;
+        margin: 7px 20px 3px;
+        border: none;
+        border-radius: 20px;
+        background: $darkCranberry;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 22px;
+        color: $pureWhite;
+        cursor: pointer;
+    }
+    button:hover {
+        background: #ccc;
+    }
+}
+
+ .back-container{
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+
+    p{
+        font-size: 25px;
+        width: 50%;
+        z-index: -1;
+        line-height: 40px;
+        letter-spacing: 1px;
+        position: absolute;
+    }
+ }
+ .pic-wrap > h2{
+     font-size: 25px;
+     padding: 10px;
+     margin: 0 auto;
+ }
+
+.formlay{
+    margin: 0 0 70px;
+}
+
+.formlay2{
+    margin: 0 0 0 75px;
+}
+
+
+.vidhold{
+    width: 500px;
+    height: 500px;
+    border-radius: 250px;
+    background: $pinkCranberry;
+    margin: 100px 0 50px;
+}
+
+.story{
+    position: absolute;
+    margin: -75px 0px 0px 125px;
+}
+
+ .int-wrapper{
+    display:flex;
+    width: 70%;
+    padding: 150px 200px;
+    background: $darkCranberry;
+    justify-content: space-between;
+    border-radius: 75px;
+    flex-wrap: wrap;
+
+    .imghold{
+        display: flex;
+        flex-direction: column;
+
+        .pic-wrap{
+            display: flex;
+            flex-direction: column;
+        
+            .coverpic{
+                display: flex;
+                width: 200px;
+                height: 200px;
+                border-radius: 100px;
+                background: $pinkCranberry;
+                margin: 0 auto;
+                justify-content: center;
+
+                img{
+                    margin: auto;
+                    width: 150px;
+                    height: 150px;
+                    border-radius: 75px;
+                }
+            }
+        }
+    }
+}
