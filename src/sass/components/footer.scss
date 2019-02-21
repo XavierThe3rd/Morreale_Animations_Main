@@ -1,14 +1,4 @@
-footer{
-    margin: 200px 0 0;
 
-    @media(max-width:1115px){
-        margin: 100px 0 0;
-
-        @media(max-width:700px){
-            margin: 0;   
-        }
-    }
-}
 
 .foot{
     background: $pinkCranberry;

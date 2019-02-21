@@ -1,4 +1,4 @@
-console.log(window.innerWidth > 1000);
+/*console.log(window.innerWidth > 1000);
 
 window.
 
@@ -66,26 +66,7 @@ window.onscroll = function() {
         }
     }
 }
-
-document.getElementById("gear-state1").addEventListener("mouseover", mouseOver);
-document.getElementById("gear-state1").addEventListener("mouseout", mouseOut);
-document.getElementById("gear-state2").addEventListener("mouseover", mouseOver);
-document.getElementById("gear-state2").addEventListener("mouseout", mouseOut);
-
-function mouseOver() {
-    document.getElementById("gear-follow1").style.animationPlayState = "running";
-    document.getElementById("gear-drive1").style.animationPlayState = "running";
-    document.getElementById("gear-follow2").style.animationPlayState = "running";
-    document.getElementById("gear-drive2").style.animationPlayState = "running";
-}
-
-function mouseOut() {
-    document.getElementById("gear-follow1").style.animationPlayState = "paused";
-    document.getElementById("gear-drive1").style.animationPlayState = "paused";
-    document.getElementById("gear-follow2").style.animationPlayState = "paused";
-    document.getElementById("gear-drive2").style.animationPlayState = "paused";
-}
-
+*/
 
 function togNav() {
 var nav = document.getElementById("mySidenav");
@@ -233,11 +214,11 @@ function closeNav2() {
 }
 
 function openNav3() {
-  document.getElementById("img2").style.display = "flex";
+  document.getElementById("img3").style.display = "flex";
 }
 
 function closeNav3() {
-  document.getElementById("img2").style.display = "none";
+  document.getElementById("img3").style.display = "none";
 }
 
 
@@ -291,31 +272,26 @@ links[i].onclick = function() {
   curr_dot = current.getElementsByClassName('active')[0];
   curr_slide.classList.remove('active-slide');
   curr_dot.classList.remove('active');
+
   if (this.className == 'next') {
 
-  if (curr_slide.nextElementSibling.classList.contains('mySlides')) {
-      curr_slide.nextElementSibling.classList.add('active-slide');
-      curr_dot.nextElementSibling.classList.add('active');
-  } else {
-      slides[0].classList.add('active-slide');
-      dots[0].classList.add('active');
+    if (curr_slide.nextElementSibling.classList.contains('mySlides')) {
+        curr_slide.nextElementSibling.classList.add('active-slide');
+        curr_dot.nextElementSibling.classList.add('active');
+    } else {
+        slides[0].classList.add('active-slide');
+        dots[0].classList.add('active');
+    }
   }
-
-  }
-
   if (this.className == 'prev') {
-
-  if (curr_slide.previousElementSibling) {
-      curr_slide.previousElementSibling.classList.add('active-slide');
-      curr_dot.previousElementSibling.classList.add('active');
-  } else {
-      slides[slides.length - 1].classList.add('active-slide');
-      dots[slides.length - 1].classList.add('active');
+    if (curr_slide.previousElementSibling) {
+        curr_slide.previousElementSibling.classList.add('active-slide');
+        curr_dot.previousElementSibling.classList.add('active');
+    } else {
+        slides[slides.length - 1].classList.add('active-slide');
+        dots[slides.length - 1].classList.add('active');
+    }
   }
-
-  }
-
 }
-
 }
 })();

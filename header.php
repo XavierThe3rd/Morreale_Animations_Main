@@ -11,13 +11,13 @@
 </head>
 <body>
     <header>
-        <nav class="log-wrapper">
-                <ul>
-                    <li>
-                        <a href="index.html">Back</a>
+        <nav class="log-wrapper flex center grid10">
+                <ul class="flex column center">
+                    <li class="abs">
+                        <a href="index.php">Back</a>
                     </li>
                 </ul>
-                <div class="nav-login">
+                <div class="nav-login flex">
                 <h1> Morreale Interface </h1>
                     <?php
                         if(isset($_SESSION['u_id'])){

@@ -1,7 +1,7 @@
 video{
     @include gearCircle(450px, 450px, 225px);
-    margin: 25px;
     background: $pureBlack;
+    margin: 23px;
 }
 
 @media (max-width:700px){

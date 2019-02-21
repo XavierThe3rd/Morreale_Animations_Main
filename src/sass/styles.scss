@@ -15,6 +15,6 @@ html, body{
 }
 
 body{
-    background: $navyBlue;
+    background: linear-gradient( $mediumCranberry 60%, $navyBlue 60%,) no-repeat $navyBlue;
     overflow-x: hidden;
 }

@@ -80,6 +80,9 @@
      }
  }
 
+ .wrap{
+     flex-wrap: wrap;
+ }
 /*------------------flex------------------*/
 
 /*----------------position----------------*/
@@ -162,4 +165,8 @@
 
 .point{
     cursor: pointer;
+}
+
+.automain{
+    margin: auto;
 }

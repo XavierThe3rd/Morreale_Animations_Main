@@ -1,380 +1,106 @@
 <?php
-    if (isset($_POST['submit'])) {
-        $file = $_FILES['file'];
 
-        $fileName = $_FILES['file']['name'];
-        $fileTmpName = $_FILES['file']['tmp_name'];
-        $fileSize = $_FILES['file']['size'];
-        $fileError = $_FILES['file']['error'];
-        $fileType = $_FILES['file']['type'];
+$a = isset($_POST["submit1"]);
+$b = isset($_POST["submit2"]);
+$c = isset($_POST["submit3"]);
+$d = isset($_POST["delete1"]);
+$e = isset($_POST["delete2"]);
+$f = isset($_POST["delete3"]);
 
-        $fileExt = explode('.', $fileName);
-        $fileActualExt = strtolower(end($fileExt));
-        $removeFile = 'uploads/img1';
+if ($a){
+    $w = 1;
+}
+if ($b){
+    $w = 2;
+}
+if ($c){
+    $w = 3;
+}
 
-        $allowed = array('jpg', 'jpeg', 'png', 'pdf');
-
-        if (in_array($fileActualExt, $allowed)) {
-            if ($fileError === 0) {
-                if ($fileSize < 1000000){
-                    unlink($removeFile);
-                    $fileNameNew = "img1";
+for ($x = 1; $x <= 21; $x++) {
+    $imgs = array('uploads/1', 'uploads/2', 'uploads/3', 'uploads/4', 'uploads/5', 'uploads/6', 'uploads/7', 'uploads/8', 'uploads/9', 'uploads/10', 'uploads/11', 'uploads/12', 'uploads/13', 'uploads/14', 'uploads/15', 'uploads/16', 'uploads/17', 'uploads/18', 'uploads/19', 'uploads/20', 'uploads/21');  
+    foreach ($imgs as $y){
+        if ($a){
+            if (file_exists($y)){
+                $x++;
+            }
+        }
+        if ($d) {
+            unlink($y);
+            header("Location: something.php?deletesuccess");
+        }
+    }
+    for ($u = 22; $u <= 42; $u++) {
+        $imgs = array('uploads/22', 'uploads/23', 'uploads/24', 'uploads/25', 'uploads/26', 'uploads/27', 'uploads/28', 'uploads/29', 'uploads/30', 'uploads/31', 'uploads/32', 'uploads/33', 'uploads/34', 'uploads/35', 'uploads/36', 'uploads/37', 'uploads/38', 'uploads/39', 'uploads/40', 'uploads/41', 'uploads/42');
+        foreach ($imgs as $v){
+            if ($b){
+                if (file_exists($v)){
+                    $u++;
+                }
+            }
+            if ($e) {
+                unlink($v);
+                header("Location: something.php?deletesuccess");
+            }
+        }
+        for ($q = 43; $q <= 63; $q++) {
+            $imgs = array('uploads/43', 'uploads/44', 'uploads/45', 'uploads/46', 'uploads/47', 'uploads/48', 'uploads/49', 'uploads/50', 'uploads/51', 'uploads/52', 'uploads/53', 'uploads/54', 'uploads/55', 'uploads/56', 'uploads/57', 'uploads/58', 'uploads/59', 'uploads/60', 'uploads/61', 'uploads/62', 'uploads/63');
+            foreach ($imgs as $r){
+                if ($c){
+                    if (file_exists($r)){
+                        $q++;
+                    }
+                }
+                if ($f) {
+                    unlink($r);
+                    header("Location: something.php?deletesuccess");
+                }
+            }
+            if ($a or $b or $c) {  
+                $fileName = $_FILES["file$w"]['name'];
+                $fileTmpName = $_FILES["file$w"]['tmp_name'];
+                $fileSize = $_FILES["file$w"]['size'];
+                $fileError = $_FILES["file$w"]['error'];
+                $fileType = $_FILES["file$w"]['type'];
+                $fileExt = explode('.', $fileName);
+                $fileActualExt = strtolower(end($fileExt));
+                $allowed = array('jpg', 'jpeg', 'png', 'pdf');
+                $errors = array();
+                $file = $_FILES["file$w"];                
+                if (in_array($fileActualExt, $allowed) && $fileError === 0 && $fileSize < 1000000 && $x <= 21 && $u <= 42 && $q <= 63){
+                    if ($a) {
+                        $fileNameNew = $x;
+                    }
+                    if ($b) {
+                        $fileNameNew = $u;
+                    }
+                    if ($c) {
+                        $fileNameNew = $q;
+                    }
                     $fileDestination = 'uploads/'.$fileNameNew;
                     move_uploaded_file($fileTmpName, $fileDestination);
-                    header("Location: something.php?uploadsuccess");
-                } else{
-                    echo "file is too big";
-                }
-            } else {
-                echo "there was an error uploading file";
-            }
-        } else {
-            echo "cannot upload files of this type";
+                    header("Location: something.php?uploadsuccess");                   
+                } 
+            } 
         }
-    } 
+    }
+}  
 
-    if (isset($_POST['submit2'])) {
-        $file = $_FILES['file2'];
+if (!in_array($fileActualExt, $allowed)){
+    array_push($errors, "cannot upload files of this type");
+}
+if ($fileError !== 0){
+    array_push($errors, "there was an error uploading file");
+}
+if ($fileSize > 1000000){
+    array_push($errors, "file is too big");
+}
+if ($x >= 22 or $u >= 43 or $q >= 64){
+    array_push($errors, "To Many Cooks");
+}
 
-        $fileName = $_FILES['file2']['name'];
-        $fileTmpName = $_FILES['file2']['tmp_name'];
-        $fileSize = $_FILES['file2']['size'];
-        $fileError = $_FILES['file2']['error'];
-        $fileType = $_FILES['file2']['type'];
-
-        $fileExt = explode('.', $fileName);
-        $fileActualExt = strtolower(end($fileExt));
-        $removeFile = 'uploads/img2';
-
-        $allowed = array('jpg', 'jpeg', 'png', 'pdf');
-
-        if (in_array($fileActualExt, $allowed)) {
-            if ($fileError === 0) {
-                if ($fileSize < 1000000){
-                    unlink($removeFile);
-                    $fileNameNew = "img2";
-                    $fileDestination = 'uploads/'.$fileNameNew;
-                    move_uploaded_file($fileTmpName, $fileDestination);
-                    header("Location: something.php?uploadsuccess");
-                } else{
-                    echo "file is too big";
-                }
-            } else {
-                echo "there was an error uploading file";
-            }
-        } else {
-            echo "cannot upload files of this type";
-        }
-    } 
-
-    if (isset($_POST['submit3'])) {
-        $file = $_FILES['file3'];
-
-        $fileName = $_FILES['file3']['name'];
-        $fileTmpName = $_FILES['file3']['tmp_name'];
-        $fileSize = $_FILES['file3']['size'];
-        $fileError = $_FILES['file3']['error'];
-        $fileType = $_FILES['file3']['type'];
-
-        $fileExt = explode('.', $fileName);
-        $fileActualExt = strtolower(end($fileExt));
-        $removeFile = 'uploads/img3';
-
-        $allowed = array('jpg', 'jpeg', 'png', 'pdf');
-
-        if (in_array($fileActualExt, $allowed)) {
-            if ($fileError === 0) {
-                if ($fileSize < 1000000){
-                    unlink($removeFile);
-                    $fileNameNew = "img3";
-                    $fileDestination = 'uploads/'.$fileNameNew;
-                    move_uploaded_file($fileTmpName, $fileDestination);
-                    header("Location: something.php?uploadsuccess");
-                } else{
-                    echo "file is too big";
-                }
-            } else {
-                echo "there was an error uploading file";
-            }
-        } else {
-            echo "cannot upload files of this type";
-        }
-    } 
-
-
-
-    if (isset($_POST['submit4'])) {
-        $file = $_FILES['file4'];
-
-        $fileName = $_FILES['file4']['name'];
-        $fileTmpName = $_FILES['file4']['tmp_name'];
-        $fileSize = $_FILES['file4']['size'];
-        $fileError = $_FILES['file4']['error'];
-        $fileType = $_FILES['file4']['type'];
-
-        $fileExt = explode('.', $fileName);
-        $fileActualExt = strtolower(end($fileExt));
-        $removeFile = 'uploads/img4';
-
-        $allowed = array('jpg', 'jpeg', 'png', 'pdf');
-
-        if (in_array($fileActualExt, $allowed)) {
-            if ($fileError === 0) {
-                if ($fileSize < 1000000){
-                    unlink($removeFile);
-                    $fileNameNew = "img4";
-                    $fileDestination = 'uploads/'.$fileNameNew;
-                    move_uploaded_file($fileTmpName, $fileDestination);
-                    header("Location: something.php?uploadsuccess");
-                } else{
-                    echo "file is too big";
-                }
-            } else {
-                echo "there was an error uploading file";
-            }
-        } else {
-            echo "cannot upload files of this type";
-        }
-    } 
-
-    if (isset($_POST['submit5'])) {
-        $file = $_FILES['file5'];
-
-        $fileName = $_FILES['file5']['name'];
-        $fileTmpName = $_FILES['file5']['tmp_name'];
-        $fileSize = $_FILES['file5']['size'];
-        $fileError = $_FILES['file5']['error'];
-        $fileType = $_FILES['file5']['type'];
-
-        $fileExt = explode('.', $fileName);
-        $fileActualExt = strtolower(end($fileExt));
-        $removeFile = 'uploads/img5';
-
-        $allowed = array('jpg', 'jpeg', 'png', 'pdf');
-
-        if (in_array($fileActualExt, $allowed)) {
-            if ($fileError === 0) {
-                if ($fileSize < 1000000){
-                    unlink($removeFile);
-                    $fileNameNew = "img5";
-                    $fileDestination = 'uploads/'.$fileNameNew;
-                    move_uploaded_file($fileTmpName, $fileDestination);
-                    header("Location: something.php?uploadsuccess");
-                } else{
-                    echo "file is too big";
-                }
-            } else {
-                echo "there was an error uploading file";
-            }
-        } else {
-            echo "cannot upload files of this type";
-        }
-    } 
-
-    if (isset($_POST['submit6'])) {
-        $file = $_FILES['file6'];
-
-        $fileName = $_FILES['file6']['name'];
-        $fileTmpName = $_FILES['file6']['tmp_name'];
-        $fileSize = $_FILES['file6']['size'];
-        $fileError = $_FILES['file6']['error'];
-        $fileType = $_FILES['file6']['type'];
-
-        $fileExt = explode('.', $fileName);
-        $fileActualExt = strtolower(end($fileExt));
-        $removeFile = 'uploads/img6';
-
-        $allowed = array('jpg', 'jpeg', 'png', 'pdf');
-
-        if (in_array($fileActualExt, $allowed)) {
-            if ($fileError === 0) {
-                if ($fileSize < 1000000){
-                    unlink($removeFile);
-                    $fileNameNew = "img6";
-                    $fileDestination = 'uploads/'.$fileNameNew;
-                    move_uploaded_file($fileTmpName, $fileDestination);
-                    header("Location: something.php?uploadsuccess");
-                } else{
-                    echo "file is too big";
-                }
-            } else {
-                echo "there was an error uploading file";
-            }
-        } else {
-            echo "cannot upload files of this type";
-        }
-    } 
-
-
-
-    if (isset($_POST['submit7'])) {
-        $file = $_FILES['file7'];
-
-        $fileName = $_FILES['file7']['name'];
-        $fileTmpName = $_FILES['file7']['tmp_name'];
-        $fileSize = $_FILES['file7']['size'];
-        $fileError = $_FILES['file7']['error'];
-        $fileType = $_FILES['file7']['type'];
-
-        $fileExt = explode('.', $fileName);
-        $fileActualExt = strtolower(end($fileExt));
-        $removeFile = 'uploads/img7';
-
-        $allowed = array('jpg', 'jpeg', 'png', 'pdf');
-
-        if (in_array($fileActualExt, $allowed)) {
-            if ($fileError === 0) {
-                if ($fileSize < 1000000){
-                    unlink($removeFile);
-                    $fileNameNew = "img7";
-                    $fileDestination = 'uploads/'.$fileNameNew;
-                    move_uploaded_file($fileTmpName, $fileDestination);
-                    header("Location: something.php?uploadsuccess");
-                } else{
-                    echo "file is too big";
-                }
-            } else {
-                echo "there was an error uploading file";
-            }
-        } else {
-            echo "cannot upload files of this type";
-        }
-    } 
-
-    if (isset($_POST['submit8'])) {
-        $file = $_FILES['file8'];
-
-        $fileName = $_FILES['file8']['name'];
-        $fileTmpName = $_FILES['file8']['tmp_name'];
-        $fileSize = $_FILES['file8']['size'];
-        $fileError = $_FILES['file8']['error'];
-        $fileType = $_FILES['file8']['type'];
-
-        $fileExt = explode('.', $fileName);
-        $fileActualExt = strtolower(end($fileExt));
-        $removeFile = 'uploads/img8';
-
-        $allowed = array('jpg', 'jpeg', 'png', 'pdf');
-
-        if (in_array($fileActualExt, $allowed)) {
-            if ($fileError === 0) {
-                if ($fileSize < 1000000){
-                    unlink($removeFile);
-                    $fileNameNew = "img8";
-                    $fileDestination = 'uploads/'.$fileNameNew;
-                    move_uploaded_file($fileTmpName, $fileDestination);
-                    header("Location: something.php?uploadsuccess");
-                } else{
-                    echo "file is too big";
-                }
-            } else {
-                echo "there was an error uploading file";
-            }
-        } else {
-            echo "cannot upload files of this type";
-        }
-    } 
-
-    if (isset($_POST['submit9'])) {
-        $file = $_FILES['file9'];
-
-        $fileName = $_FILES['file9']['name'];
-        $fileTmpName = $_FILES['file9']['tmp_name'];
-        $fileSize = $_FILES['file9']['size'];
-        $fileError = $_FILES['file9']['error'];
-        $fileType = $_FILES['file9']['type'];
-
-        $fileExt = explode('.', $fileName);
-        $fileActualExt = strtolower(end($fileExt));
-        $removeFile = 'uploads/img9';
-
-        $allowed = array('jpg', 'jpeg', 'png', 'pdf');
-
-        if (in_array($fileActualExt, $allowed)) {
-            if ($fileError === 0) {
-                if ($fileSize < 1000000){
-                    unlink($removeFile);
-                    $fileNameNew = "img9";
-                    $fileDestination = 'uploads/'.$fileNameNew;
-                    move_uploaded_file($fileTmpName, $fileDestination);
-                    header("Location: something.php?uploadsuccess");
-                } else{
-                    echo "file is too big";
-                }
-            } else {
-                echo "there was an error uploading file";
-            }
-        } else {
-            echo "cannot upload files of this type";
-        }
-    } 
-
-
-
-    if (isset($_POST['submit10'])) {
-        $file = $_FILES['file10'];
-
-        $fileName = $_FILES['file10']['name'];
-        $fileTmpName = $_FILES['file10']['tmp_name'];
-        $fileSize = $_FILES['file10']['size'];
-        $fileError = $_FILES['file10']['error'];
-        $fileType = $_FILES['file10']['type'];
-
-        $fileExt = explode('.', $fileName);
-        $fileActualExt = strtolower(end($fileExt));
-        $removeFile = 'uploads/vid1';
-
-        $allowed = array('mp4');
-
-        if (in_array($fileActualExt, $allowed)) {
-            if ($fileError === 0) {
-                if ($fileSize < 1000000000){
-                    unlink($removeFile);
-                    $fileNameNew = "vid1";
-                    $fileDestination = 'uploads/'.$fileNameNew;
-                    move_uploaded_file($fileTmpName, $fileDestination);
-                    header("Location: something.php?uploadsuccess");
-                } else{
-                    echo "file is too big";
-                }
-            } else {
-                echo "there was an error uploading file";
-            }
-        } else {
-            echo "cannot upload files of this type";
-        }
-    } 
-
-    if (isset($_POST['submit11'])) {
-        $file = $_FILES['file11'];
-
-        $fileName = $_FILES['file11']['name'];
-        $fileTmpName = $_FILES['file11']['tmp_name'];
-        $fileSize = $_FILES['file11']['size'];
-        $fileError = $_FILES['file11']['error'];
-        $fileType = $_FILES['file11']['type'];
-
-        $fileExt = explode('.', $fileName);
-        $fileActualExt = strtolower(end($fileExt));
-        $removeFile = 'uploads/vid2';
-
-        $allowed = array('mp4');
-
-        if (in_array($fileActualExt, $allowed)) {
-            if ($fileError === 0) {
-                if ($fileSize < 1000000000){
-                    unlink($removeFile);
-                    $fileNameNew = "vid2";
-                    $fileDestination = 'uploads/'.$fileNameNew;
-                    move_uploaded_file($fileTmpName, $fileDestination);
-                    header("Location: something.php?uploadsuccess");
-                } else{
-                    echo "file is too big";
-                }
-            } else {
-                echo "there was an error uploading file";
-            }
-        } else {
-            echo "cannot upload files of this type";
-        }
-    } 
+echo "<ul>";
+foreach ($errors as $z){
+    echo "<li>" .$z. "</li>";
+}
+echo "</ul>";

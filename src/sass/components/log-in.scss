@@ -1,27 +1,17 @@
 .log-wrapper{
-    width: 100%;
-    display: flex;
-    justify-content: center;
     background: $pinkCranberry;
 
-    ul{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+    li{
+        left: 100px;
 
-        li{
-            position: absolute;
-            left: 100px;
-
-            a{
-                font-size: 20px;
-            }
+        a{
+            font-size: 20px;
         }
     }
 }
 
+
 .nav-login{
-     display: flex;
      padding: 50px;
 
      h1{
@@ -30,23 +20,19 @@
      }
 
     input{
-        width: 200px;
-        height: 40px;
+        @include gearCircle(200px, 40px, 20px);
         padding: 0px 10px;
         margin: 7px 10px 3px;
         border: none;
-        border-radius: 20px;
         background: #ccc;
         font-family: 'Times New Roman', Times, serif;
         font-size: 20px;
         color: #111;
     }
         button{
-        width: 100px;
-        height: 40px;
+        @include gearCircle(100px, 40px, 20px);
         margin: 7px 20px 3px;
         border: none;
-        border-radius: 20px;
         background: $darkCranberry;
         font-family: 'Times New Roman', Times, serif;
         font-size: 22px;
@@ -60,79 +46,97 @@
 
  .back-container{
     padding: 100px 0;
-    display: flex;
-    justify-content: center;
 
     p{
         font-size: 25px;
-        width: 50%;
-        z-index: -1;
         line-height: 40px;
         letter-spacing: 1px;
-        position: absolute;
     }
  }
- .pic-wrap > h2{
-     font-size: 25px;
-     padding: 10px;
-     margin: 0 auto;
- }
-
-.formlay{
-    margin: 0 0 70px;
-}
-
-.formlay2{
-    margin: 0 0 0 75px;
-}
-
-
-.vidhold{
-    width: 500px;
-    height: 500px;
-    border-radius: 250px;
-    background: $pinkCranberry;
-    margin: 100px 0 50px;
-}
-
-.story{
-    position: absolute;
-    margin: -75px 0px 0px 125px;
-}
 
  .int-wrapper{
-    display:flex;
-    width: 70%;
-    padding: 150px 200px;
+    padding: 50px 50px;
     background: $darkCranberry;
-    justify-content: space-between;
     border-radius: 75px;
-    flex-wrap: wrap;
 
-    .imghold{
-        display: flex;
-        flex-direction: column;
+}
 
-        .pic-wrap{
-            display: flex;
-            flex-direction: column;
-        
-            .coverpic{
-                display: flex;
-                width: 200px;
-                height: 200px;
-                border-radius: 100px;
-                background: $pinkCranberry;
-                margin: 0 auto;
-                justify-content: center;
+.formplate{
+    width: 20%;
+    margin: 150px 0 0;
 
-                img{
-                    margin: auto;
-                    width: 150px;
-                    height: 150px;
-                    border-radius: 75px;
+    @media(max-width: 1830px){
+        width: 22%;
+
+        @media(max-width: 1670px){
+            width: 24%;
+            
+            @media(max-width: 1530px){
+                width: 26%;
+
+                @media(max-width: 1415px){
+                    width: 28%;
+
+                    @media(max-width: 1315px){
+                        width: 30%;
+
+                        @media(max-width: 1230px){
+                            width: 32%;
+                          
+                            @media(max-width: 1155px){
+                                width: 34%;
+                            }
+                        }
+                    }
                 }
             }
         }
     }
+
+    input{
+        border-radius: 20px;
+        color: $pureWhite;
+    }
+
+    button{
+        @include gearCircle(70px, 40px, 20px);
+        border: none;
+        background: $pinkCranberry;
+        color: $pureWhite;
+        cursor: pointer;  
+    }
+
+    .delbutton{
+        margin: 0 130px;
+    }
+
+    button:hover {
+        background: #ccc;
+    }
 }
+
+.picbox{
+    @include gearCircle(100px, 100px, 0);
+    background: $mediumCranberry;
+    margin: 20px 10px;
+}
+
+.coverpic{
+    @include gearCircle(200px, 200px, 100px);
+    background: $mediumCranberry;
+}
+
+.coverpic-main{
+    @include gearCircle(175px, 175px, 87.5px);
+}
+
+.picmain{
+    @include gearCircle(75px, 75px, 0);
+}
+
+.instruction > p{
+    font-size: 20px;
+    line-height: 20px;
+}
+
+

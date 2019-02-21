@@ -1,9 +1,32 @@
+.reel-empty{
+    height:500px;
+    background: #4B41CF;
+    z-index: -2;
+}
+
+.video-holder{
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    top: 212px;
+}
+
+.video-holder2{
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    top:1512px;
+}
+
+
+
+
 .reel-video{
-    padding: 100px 150px 50px 150px;
+    margin: 0 auto;
     
     p{
         margin: 0 auto;
-        padding: 0 0 100px 0;
+        padding: 0 0 50px 0;
     }
 
     @media (max-width:1115px){
@@ -28,9 +51,6 @@
     }
 }
 
-.video-block1{
-    margin: 0 125px;
-}
 
 .video-block2{
     margin: 0;
@@ -68,55 +88,11 @@
     }
 }
 
-.drive1{
-    @include positioning(399px, 56px, inherit, inherit);
-}
-
-.drive2{
-    @include positioning(408px, inherit, 64px, inherit);
-}
-
-.f-teeth {
-    @include teeth(540px, $darkCranberry);
-
-    &::before{
-        @include triteethRight(270px, 100px, -100px, $darkCranberry);
-    }
-
-    &::after{
-        @include triteethLeft(270px, 100px, $darkCranberry);
-    }
-
-    @media (max-width:700px){
-        display: none;
-    }
-}
-
-.d-teeth {
-    @include teeth(155px, $mediumCranberry);
-
-    &::before{
-        @include triteethRight(77.5px, 25px, -25px, $mediumCranberry);
-    }
-
-    &::after{
-        @include triteethLeft(77.5px, 25px, $mediumCranberry);
-    }
-}
-
-@for $i from 1 through 16 {
-    $angle: rotate(11.25deg * $i);
-
-    .tooth-#{$i} {
-        transform: $angle;
-    }
-}
-
 .drawings{
-    padding: 50px 150px 0;
+    padding: 315px 150px 500px;
 
     @media(max-width:1525px){
-        padding: 50px 100px;
+        padding: 315px 100px;
     }
 
     ul{
@@ -183,7 +159,6 @@
   
 .prev, .next {
     cursor: pointer;
-    position: absolute;
     top: 50%;
     margin-top: -30px;
     padding: 16px;
@@ -191,6 +166,7 @@
     font-weight: bold;
     font-size: 50px;
     transition: 0.6s ease;
+    position: absolute;
 }
   
 .next {
