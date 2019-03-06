@@ -22,10 +22,9 @@ gulp.task('default', ['buildStyles'], function () {
  
   // Serve files from the root of this project
   browserSync.init({
-    server: {
-      baseDir: "./"
-    }
+    proxy: "http://localhost/Morreale_Animations_Main"
   });
+
  
   gulp.watch('./src/sass/*.scss', ['buildStyles']).on('change', browserSync.reload);
 });

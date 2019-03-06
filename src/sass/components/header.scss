@@ -3,6 +3,8 @@
 .nav-title{
     background: $mediumCranberry;
     padding: 30px 0 30px;
+    margin: 0;
+    top: 58px;
 
     &::before{
         @include tritopLeft(383px, 147px solid $mediumCranberry, 0, 761px, 0); 
@@ -15,17 +17,32 @@
         top: 0;
         width:1142px;
         height: 148px;
-        background: black;
+        background: $pureWhite url(https://uwm.edu/studentinvolvement/wp-content/uploads/sites/260/2017/12/1.jpg) no-repeat 235px -85px;
         position: absolute;
     }
 
     @media (max-width:1525px){
-        padding: 30px 100px 30px;
+        padding: 34px 100px 34px;
+
+        @media (max-width:1115px){
+            width: 100%;
+            padding: 0;
+            margin: 70px 0 0;
+            top: 70px;
+
+            &::before{
+                display: none;
+            }
+        
+            &::after{
+                display: none;
+            }   
+        } 
     }
 }
 
 %navbar-styles{
-    background: $pinkCranberry;
+    background: $darkCranberry;
     z-index: 3;
 
     &::after{
@@ -43,23 +60,75 @@
         }
     }
 }
+.width-switch{
 
+    div{
+        background: $mediumCranberry;
+        width: 2px;
+        height: 40px;
+        transform: rotate(35deg);
+
+        @media (max-width:1115px){
+            display:none;
+        }
+    }
+
+    @media (max-width:1525px){
+        width: 60%;
+    }
+    @media (max-width:1115px){
+        width: 0%;
+        padding: 12px;
+    }
+}
 .navbar{
     @extend %navbar-styles;
+
+    .open-nav{
+        margin: 0 0 0 -49px;
+        background: transparent;
+        border: none;
+        outline: none;
+    
+        div{
+            width: 30px;
+            height: 5px;
+            background-color: $pureWhite;
+            margin: 2px 0;
+            border-radius: 2.5px;
+            transition: 0.4s;
+        }
+    }
+
+    p{
+        margin: 1px 5px 0 0;
+        font-size: 22px;
+    }
 }
 
-.hidden-navbar{
-    @extend %navbar-styles;
-    display: none;
-    top: 0;
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-6.5px, 6px);
+  transform: rotate(-45deg) translate(-7px, 6px);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-6.5px, -6px);
+  transform: rotate(45deg) translate(-6.5px, -6px);
 }
 
 .navbar > ul, .hidden-navbar > ul{
-    margin: 12px 0;
     display: flex;
 
     a{
         font-size: 20px;
+        padding: 10px 70px;
+        transition: 0.5s;
+    }
+    a:hover{
+        color: $pinkCranberry;
+        transition: 0.5s;
     }
 
     @media (max-width:1115px){
@@ -71,24 +140,58 @@
 }
 
 .sidenav{
-    display:none;
-
+    display: none;
+    
     @media(max-width:1115px){
-        display: flex;
-        transition: 0.5s;
-        background: $mediumCranberry;
         opacity: 0.90;
         height: 0%;
-        top: 165px;
+        top: -40px;
+        display: block;
 
+        li{
+            border:none;
+            transition: 0.5s;
+            z-index:-1;
+        }
         a{
             font-size: 20px;
-            transition: 0.25s;
-            padding: 22px;
+            transition: 0.5s;
+            opacity: 0;
+            z-index:-1;
         }
     }
 }
 
-#mySidenav2{
-    top: 0;
+.hidden-a1{
+    margin: 84px 0 0;
+
+    li{
+        background: $pinkCranberry;
+        z-index:2;
+        transition: 0.5s;
+        border-width: 0 0 3px;
+        border-style: solid;
+        border-color: $mediumCranberry;
+    }
+    a{
+        display: block;
+        transition: 0.5s;
+        opacity: 1;
+        z-index: 2;
+        padding: 90px 335px;
+
+        @media(max-width: 700px){
+            padding: 50px 335px;
+        }
+    }
+    li:hover{
+        background: $pureWhite;
+        transition: 0.5s;
+
+        a{
+            color:$pinkCranberry;
+            transition: 0.5s;
+        }
+    }
 }
+

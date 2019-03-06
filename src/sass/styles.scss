@@ -15,6 +15,10 @@ html, body{
 }
 
 body{
-    background: linear-gradient( $mediumCranberry 60%, $navyBlue 60%,) no-repeat $navyBlue;
+    background: $mediumCranberry ;
     overflow-x: hidden;
+
+    @media(max-width: 1115px){
+        background: $navyBlue 60%,
+    }
 }

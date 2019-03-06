@@ -1,29 +1,28 @@
 
-
 .foot{
-    background: $pinkCranberry;
-
-    &::before{
-        @include tribottomLeft(163px, 163px, -163px);
-    }
-
-    &::after{
-        @include tribottomRight(163px, 163px, -163px);
-    }
-
-    @media(max-width:1115px){
-
-        &::before{
-            display: none;
-        }
-    
-        &::after{
-           display: none;
-        }
-    }
+    background: $mediumCranberry;
 }
 
 .foot > p, .foot > a{
-    padding: 61.3px 0;
+    padding: 50px 0;
     font-size: 20px;
+}
+
+.signin-btn{
+    background: $darkCranberry;
+    padding: 20px 40px;
+    margin: 0 0 40px;
+    border: none;
+    color: $pureWhite;
+    border-radius: 30px;
+    transition: 0.5s;
+
+
+    @media (max-width: 900px){
+        display: none;
+    }
+}
+
+.signin-btn:hover {
+    background: $pinkCranberry;
 }

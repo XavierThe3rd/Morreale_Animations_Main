@@ -25,7 +25,6 @@
         margin: 7px 10px 3px;
         border: none;
         background: #ccc;
-        font-family: 'Times New Roman', Times, serif;
         font-size: 20px;
         color: #111;
     }
@@ -34,10 +33,8 @@
         margin: 7px 20px 3px;
         border: none;
         background: $darkCranberry;
-        font-family: 'Times New Roman', Times, serif;
         font-size: 22px;
         color: $pureWhite;
-        cursor: pointer;
     }
     button:hover {
         background: #ccc;
@@ -62,6 +59,29 @@
 }
 
 .formplate{
+
+    input{
+        border-radius: 20px;
+        color: $pureWhite;
+    }
+
+    button{
+        @include gearCircle(70px, 40px, 20px);
+        border: none;
+        background: $pinkCranberry;
+        color: $pureWhite; 
+    }
+
+    .delbutton{
+        margin: 0 130px;
+    }
+
+    button:hover {
+        background: #ccc;
+    }
+}
+
+.one{
     width: 20%;
     margin: 150px 0 0;
 
@@ -82,7 +102,7 @@
 
                         @media(max-width: 1230px){
                             width: 32%;
-                          
+                        
                             @media(max-width: 1155px){
                                 width: 34%;
                             }
@@ -92,28 +112,41 @@
             }
         }
     }
+}
 
-    input{
-        border-radius: 20px;
-        color: $pureWhite;
-    }
+.two{
+    width: 29%;
+    margin: 150px 0 0;
 
-    button{
-        @include gearCircle(70px, 40px, 20px);
-        border: none;
-        background: $pinkCranberry;
-        color: $pureWhite;
-        cursor: pointer;  
-    }
+    @media(max-width: 1830px){
+        width: 31%;
 
-    .delbutton{
-        margin: 0 130px;
-    }
+        @media(max-width: 1670px){
+            width: 34%;
+            
+            @media(max-width: 1530px){
+                width: 36%;
 
-    button:hover {
-        background: #ccc;
+                @media(max-width: 1415px){
+                    width: 40%;
+
+                    @media(max-width: 1315px){
+                        width: 42%;
+
+                        @media(max-width: 1230px){
+                            width: 44%;
+                        
+                            @media(max-width: 1155px){
+                                width: 46%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
+  
 
 .picbox{
     @include gearCircle(100px, 100px, 0);

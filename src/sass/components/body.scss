@@ -1,98 +1,81 @@
 .reel-empty{
-    height:500px;
-    background: #4B41CF;
-    z-index: -2;
+    height:780px;
+    background: #11097b;
 }
 
 .video-holder{
-    display: flex;
-    position: absolute;
-    flex-direction: column;
-    top: 212px;
+    top: 385px;
+
+
+
+    @media(max-width:700px){
+        top: 400px;
+    }
 }
 
 .video-holder2{
-    display: flex;
-    position: absolute;
-    flex-direction: column;
-    top:1512px;
+    top:1840px;
+
+    @media(max-width:1525px){
+        top: 1780px;
+
+        @media(max-width:1115px){
+            top: 2370px;
+        }
+    }
 }
 
+.text-hold{
+    width: 600px;
 
-
+    @media(max-width:700px){
+        width: 400px;
+    }
+}
 
 .reel-video{
-    margin: 0 auto;
-    
-    p{
-        margin: 0 auto;
-        padding: 0 0 50px 0;
-    }
-
     @media (max-width:1115px){
         width: 100%;
         padding: 0;
-        margin: 0 auto;
+    }
+    p{
+        padding: 0 40px 100px 40px;
+
+        @media (max-width:700px){
+            padding: 0 40px 50px 40px;
+        } 
     }
 }
 
-@media (max-width:1115px){
-    .reel-wrap{
-        flex-direction: column;
-    
-        .reel-empty{
-            height: 300px;
-        }
-    }
-    @media (max-width:700px){
-        .reel-video > p{
-            padding: 0 30px 100px 30px;
-        }
+.vid-display{
+    @include gearCircle(450px, 450px, 225px);
+    background: black;
+    margin: 23px;
+
+    @media(max-width:700px){
+        @include gearCircle(300px, 300px, 150px);
     }
 }
 
-
-.video-block2{
-    margin: 0;
-}
-
-@media (max-width:700px){
-    .video-block1, .video-block2{
-        margin: 0 auto;
-        max-width: 480px;
-    }
-}
-
-.progress-bar-fill{
-    display: none;
-}
 
 .gear-follow{
     @include gearCircle(500px, 500px, 250px);
-    background: $darkCranberry;
-}
+    background: $mediumCranberry;
 
-@media (max-width:700px){
-    .gear-follow{
+    @media (max-width:700px){
         @include gearCircle(350px, 350px, 175px); 
     }
 }
 
-.gear-drive{
-    @include gearCircle(125px, 125px, 62.5px);
-    background: $mediumCranberry;
-    transform: rotate(5.5deg);
-
-    @media (max-width:700px){
-        display: none;
-    }
-}
-
 .drawings{
-    padding: 315px 150px 500px;
+    padding: 315px 150px 595px;
+    background: $navyBlue;
 
     @media(max-width:1525px){
-        padding: 315px 100px;
+        padding: 315px 100px 575px;
+    }
+    @media(max-width:1115px){
+        padding: 275px 100px 570px;
     }
 
     ul{
@@ -107,7 +90,7 @@
             width: 300px;
             background: transparent;
             border: 0;
-            margin: 0;
+            margin: 20px 0;
             padding:0;
         
             @media(max-width:1310px){
@@ -141,8 +124,14 @@
 
 .closebtn{
     font-family: 'Times New Roman', Times, serif;
-    color: white;
-    font-size: 40px;
+    color: $pureWhite;
+    font-size: 50px;
+    transition: 0.5s;
+}
+
+.closebtn:hover{
+    color: $pinkCranberry;
+    transition: 0.5s;
 }
  
  .slideshow-container {
@@ -165,7 +154,7 @@
     color: white;
     font-weight: bold;
     font-size: 50px;
-    transition: 0.6s ease;
+    transition: 0.5s;
     position: absolute;
 }
   
@@ -178,15 +167,13 @@
 }
 
 .prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
-}
-
-.active-slide {
-    display:flex;
+    color: $pinkCranberry;
+    font-size: 70px;
+    transition: 0.5s;
 }
 
 .numbertext {
-    color: #f2f2f2;
+    color: $pureWhite;
     font-size: 12px;
     padding: 8px 12px;
     top: 0;
@@ -195,16 +182,27 @@
 .dot {
     @include gearCircle(13px, 13px, 6.5px);
     margin: 0 2px;
-    background-color: #bbb;
+    background-color: $pureWhite;
     display: inline-block;
     transition: background-color 0.6s ease;
 }
   
 .active, .dot:hover {
-    background-color: #717171;
+    background-color: $pinkCranberry;
 }
 
 .checkers{
     bottom: 20px;
 }
 
+.myslides > img{
+    height: 600px;
+
+    @media(max-width:1115px){
+        height: 400px;
+
+        @media(max-width:700px){
+            height: 245px;
+        }
+    }
+}

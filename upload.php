@@ -3,9 +3,15 @@
 $a = isset($_POST["submit1"]);
 $b = isset($_POST["submit2"]);
 $c = isset($_POST["submit3"]);
+$s = isset($_POST["submit4"]);
+$t = isset($_POST["submit5"]);
 $d = isset($_POST["delete1"]);
 $e = isset($_POST["delete2"]);
 $f = isset($_POST["delete3"]);
+$h = isset($_POST["delete4"]);
+$i = isset($_POST["delete5"]);
+$n = 64;
+$o = 65;
 
 if ($a){
     $w = 1;
@@ -15,6 +21,14 @@ if ($b){
 }
 if ($c){
     $w = 3;
+}
+
+if ($s){
+    $w = 4;
+}
+
+if ($t){
+    $w = 5;
 }
 
 for ($x = 1; $x <= 21; $x++) {
@@ -56,7 +70,15 @@ for ($x = 1; $x <= 21; $x++) {
                     header("Location: something.php?deletesuccess");
                 }
             }
-            if ($a or $b or $c) {  
+            if ($h) {
+                unlink('uploads/64');
+                header("Location: something.php?deletesuccess");
+            }
+            if ($i) {
+                unlink('uploads/65');
+                header("Location: something.php?deletesuccess");
+            }
+            if ($a or $b or $c or $s or $t) {  
                 $fileName = $_FILES["file$w"]['name'];
                 $fileTmpName = $_FILES["file$w"]['tmp_name'];
                 $fileSize = $_FILES["file$w"]['size'];
@@ -64,10 +86,10 @@ for ($x = 1; $x <= 21; $x++) {
                 $fileType = $_FILES["file$w"]['type'];
                 $fileExt = explode('.', $fileName);
                 $fileActualExt = strtolower(end($fileExt));
-                $allowed = array('jpg', 'jpeg', 'png', 'pdf');
+                $allowed = array('jpg', 'jpeg', 'png', 'pdf', 'mp4');
                 $errors = array();
                 $file = $_FILES["file$w"];                
-                if (in_array($fileActualExt, $allowed) && $fileError === 0 && $fileSize < 1000000 && $x <= 21 && $u <= 42 && $q <= 63){
+                if (in_array($fileActualExt, $allowed) && $fileError === 0 && $fileSize < 1000000000 && $x <= 21 && $u <= 42 && $q <= 63 && $n >= 64 && $o >= 65){
                     if ($a) {
                         $fileNameNew = $x;
                     }
@@ -76,6 +98,12 @@ for ($x = 1; $x <= 21; $x++) {
                     }
                     if ($c) {
                         $fileNameNew = $q;
+                    }
+                    if ($s) {
+                        $fileNameNew = $n;
+                    }
+                    if ($t) {
+                        $fileNameNew = $o;
                     }
                     $fileDestination = 'uploads/'.$fileNameNew;
                     move_uploaded_file($fileTmpName, $fileDestination);
@@ -92,10 +120,10 @@ if (!in_array($fileActualExt, $allowed)){
 if ($fileError !== 0){
     array_push($errors, "there was an error uploading file");
 }
-if ($fileSize > 1000000){
+if ($fileSize > 1000000000){
     array_push($errors, "file is too big");
 }
-if ($x >= 22 or $u >= 43 or $q >= 64){
+if ($x >= 22 or $u >= 43 or $q >= 64 or $n >= 65 or $o >= 66){
     array_push($errors, "To Many Cooks");
 }
 
